@@ -1,4 +1,4 @@
-package org.wecancodeit.serverside;
+package org.ohioanscare.serverside;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
