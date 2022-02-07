@@ -19,7 +19,7 @@ function renderHome() {
 
 function renderFood() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains(foodResources)) {
+        if (event.target.classList.contains("foodResources")) {
             console.log("BUTTON IS WORKING");
             app.innerText = "MADISON IS GREAT";
             apiHelpers.getRequest("http://localhost:8080/resources", (food) => {
