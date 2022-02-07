@@ -22,6 +22,20 @@ body {
     color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
+    background-image: url(assets\Jumbotron-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+  .jumbotrn-cont {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form-cont{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .container-fluid {
     padding: 60px 50px;
