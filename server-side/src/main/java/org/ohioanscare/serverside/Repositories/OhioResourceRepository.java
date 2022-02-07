@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OhioResourceRepository extends CrudRepository <OhioResource, Long> {
+    OhioResource findOhioResourceById(Long id);
 }

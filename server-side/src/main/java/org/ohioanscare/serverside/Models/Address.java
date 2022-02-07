@@ -33,6 +33,8 @@ public class Address {
         this.region = region;
     }
 
+    public Address() {}
+
     public Long getId() {
         return id;
     }
