@@ -1,6 +1,8 @@
 package org.ohioanscare.serverside.Models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -11,9 +13,14 @@ public class OhioResource {
     private String entityName;
     private String organizationName;
     private String description;
-    private String mainServices;
     private String serving;
-    private String hours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String sunHours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String monHours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String tuesHours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String wedHours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String thursHours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String friHours; //Format ---> HH:MM - HH:MM (12-hour format)
+    private String satHours; //Format ---> HH:MM - HH:MM (12-hour format)
     private String websiteUrl;
     private String phone;
     private String languages;
@@ -21,22 +28,32 @@ public class OhioResource {
     @JoinColumn(name = "address_id")
     private Address address;
     @ManyToMany
+    private Collection<Service> services;
+    @ManyToMany
     private Collection<Region> region;
 
-    public OhioResource(String entityName, String organizationName, String description, String mainServices, String serving, String hours, String websiteUrl, String phone, String languages, Address address) {
+
+    public OhioResource(String entityName, String organizationName, String description, String serving, String sunHours, String monHours, String tuesHours, String wedHours, String thursHours, String friHours, String satHours, String websiteUrl, String phone, String languages, Address address, Service... services) {
         this.entityName = entityName;
         this.organizationName = organizationName;
         this.description = description;
-        this.mainServices = mainServices;
         this.serving = serving;
-        this.hours = hours;
+        this.sunHours = sunHours;
+        this.monHours = monHours;
+        this.tuesHours = tuesHours;
+        this.wedHours = wedHours;
+        this.thursHours = thursHours;
+        this.friHours = friHours;
+        this.satHours = satHours;
         this.websiteUrl = websiteUrl;
         this.phone = phone;
         this.languages = languages;
         this.address = address;
+        this.services = new ArrayList<>(Arrays.asList(services));
     }
 
-    public OhioResource() {}
+    public OhioResource() {
+    }
 
     public Long getId() {
         return id;
@@ -54,16 +71,36 @@ public class OhioResource {
         return description;
     }
 
-    public String getMainServices() {
-        return mainServices;
-    }
-
     public String getServing() {
         return serving;
     }
 
-    public String getHours() {
-        return hours;
+    public String getSunHours() {
+        return sunHours;
+    }
+
+    public String getMonHours() {
+        return monHours;
+    }
+
+    public String getTuesHours() {
+        return tuesHours;
+    }
+
+    public String getWedHours() {
+        return wedHours;
+    }
+
+    public String getThursHours() {
+        return thursHours;
+    }
+
+    public String getFriHours() {
+        return friHours;
+    }
+
+    public String getSatHours() {
+        return satHours;
     }
 
     public String getWebsiteUrl() {
@@ -82,6 +119,10 @@ public class OhioResource {
         return address;
     }
 
+    public Collection<Service> getServices() {
+        return services;
+    }
+
     public Collection<Region> getRegion() {
         return region;
     }
@@ -98,16 +139,36 @@ public class OhioResource {
         this.description = description;
     }
 
-    public void setMainServices(String mainServices) {
-        this.mainServices = mainServices;
-    }
-
     public void setServing(String serving) {
         this.serving = serving;
     }
 
-    public void setHours(String hours) {
-        this.hours = hours;
+    public void setSunHours(String sunHours) {
+        this.sunHours = sunHours;
+    }
+
+    public void setMonHours(String monHours) {
+        this.monHours = monHours;
+    }
+
+    public void setTuesHours(String tuesHours) {
+        this.tuesHours = tuesHours;
+    }
+
+    public void setWedHours(String wedHours) {
+        this.wedHours = wedHours;
+    }
+
+    public void setThursHours(String thursHours) {
+        this.thursHours = thursHours;
+    }
+
+    public void setFriHours(String friHours) {
+        this.friHours = friHours;
+    }
+
+    public void setSatHours(String satHours) {
+        this.satHours = satHours;
     }
 
     public void setWebsiteUrl(String websiteUrl) {
@@ -124,6 +185,10 @@ public class OhioResource {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public void setServices(Collection<Service> services) {
+        this.services = services;
     }
 
     public void setRegion(Collection<Region> region) {
