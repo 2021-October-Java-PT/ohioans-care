@@ -26,10 +26,10 @@ function navHome() {
 
 function renderFood() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("foodResources")) {
-            apiHelpers.getRequest("http://localhost:8080/resources", (foodResource) => {
-                console.log(foodResource);
-                app.innerHTML = Food(foodResource);
+        if (event.target.classList.contains("food-resources")) {
+            console.log("BUTTON IS WORKING");
+            app.innerText = "MADISON IS GREAT";
+            apiHelpers.getRequest("http://localhost:8080/resources", (food) => {
             });
         }
     });

@@ -1,5 +1,68 @@
+import careImg from "../../assets/CARE.png";
+import educationImg from "../../assets/EDUCATION.png";
+import foodImg from "../../assets/Food.png";
+import goodsImg from "../../assets/Goods.png";
+import healthImg from "../../assets/HEALTH.png";
+import housingImg from "../../assets/HOUSING.png";
+import legalImg from "../../assets/LEGAL.png";
+import moneyImg from "../../assets/MONEY.png";
+import transitImg from "../../assets/TRANSIT.png";
+import workImg from "../../assets/WORK.png";
+
 export default function Home() {
     return `
-        <button class="foodResources" id="foodResources">Food</button>
+        <div id="app">
+        <div class="search-section">
+        <p>OHIO REGIONS</p>
+        <h3>Northwest | Northeast | Central | Southwest | Southeast</h3>
+        <div class="form-cont">
+          <form>
+            <div class="input-group">
+              <input type="search" class="form-control" size="50" placeholder="Enter Your Zip Code, City, or County"
+                required>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-danger">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-2 col-md-offset-1">
+          <img class="img-responsive btn food-resources" src="${foodImg}" id="" />
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn housing-resources" src="${housingImg}" />
+        </div>
+
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn goods-resources" src="${goodsImg}" />
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn transit-resources" src="${transitImg}" />
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn health-resources" src="${healthImg}" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-2 col-md-offset-1">
+          <img class="img-responsive btn money-resources" src="${moneyImg}" />
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn care-resources" src="${careImg}" />
+        </div>
+
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn education-resources" src="${educationImg}" />
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn work-resources" src="${workImg}" />
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="img-responsive btn legal-resources" src="${legalImg}" />
+        </div>
+      </div>
+    </div>
     `;
 }
