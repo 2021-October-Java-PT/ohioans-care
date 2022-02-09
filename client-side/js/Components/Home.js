@@ -4,6 +4,7 @@ import foodImg from "../../assets/Food.png";
 import goodsImg from "../../assets/Goods.png";
 import healthImg from "../../assets/HEALTH.png";
 import housingImg from "../../assets/HOUSING.png";
+import jumbotronImg from "../../assets/Jumbotron-bg.png";
 import legalImg from "../../assets/LEGAL.png";
 import moneyImg from "../../assets/MONEY.png";
 import transitImg from "../../assets/TRANSIT.png";
@@ -12,6 +13,9 @@ import workImg from "../../assets/WORK.png";
 export default function Home() {
     return `
         <div id="app">
+        <div class="jumbotron text-center" style="background-image: url(${jumbotronImg});">
+        <div class="jumbotrn-cont">
+          <h1>WE ARE HERE TO HELP</h1>
         <div class="search-section">
         <p>OHIO REGIONS</p>
         <h3>Northwest | Northeast | Central | Southwest | Southeast</h3>
@@ -63,6 +67,8 @@ export default function Home() {
           <img class="img-responsive btn legal-resources" src="${legalImg}" />
         </div>
       </div>
+    </div>
+    </div>
     </div>
     `;
 }

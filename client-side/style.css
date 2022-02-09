@@ -222,6 +222,11 @@ ul {
   margin-bottom: 10px;
 }
 
+.resource-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .resource-wrapper {
   margin: 10px auto;
 }
