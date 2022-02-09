@@ -11,25 +11,23 @@ public class Address {
     private String addressLine1;
     private String addressLine2;
     private String city;
+    @ManyToOne
+    private County county;
     private String state;
     @OneToOne
     private ZipCode zipCode;
-    private String zipCodePlusFour;
-    @ManyToOne
-    private County county;
     @OneToOne
     private Region region;
     @OneToMany
     private Collection<OhioResource> ohioResources;
 
-    public Address(String addressLine1, String addressLine2, String city, String state, ZipCode zipCode, String zipCodePlusFour, County county, Region region) {
+    public Address(String addressLine1, String addressLine2, String city, County county, String state, ZipCode zipCode, Region region) {
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.city = city;
+        this.county = county;
         this.state = state;
         this.zipCode = zipCode;
-        this.zipCodePlusFour = zipCodePlusFour;
-        this.county = county;
         this.region = region;
     }
 
@@ -57,10 +55,6 @@ public class Address {
 
     public ZipCode getZipCode() {
         return zipCode;
-    }
-
-    public String getZipCodePlusFour() {
-        return zipCodePlusFour;
     }
 
     public County getCounty() {
@@ -93,10 +87,6 @@ public class Address {
 
     public void setZipCode(ZipCode zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public void setZipCodePlusFour(String zipCodePlusFour) {
-        this.zipCodePlusFour = zipCodePlusFour;
     }
 
     public void setCounty(County county) {

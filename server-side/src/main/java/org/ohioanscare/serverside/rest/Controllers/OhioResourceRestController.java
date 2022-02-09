@@ -15,14 +15,15 @@ public class OhioResourceRestController {
     @Resource
     private OhioResourceRepository ohioResourceRepo;
 
+
+
     @RequestMapping("/resources")
-    public Collection<OhioResource> getResource() {
+    public Collection<OhioResource> getAllResource() {
         return (Collection<OhioResource>) ohioResourceRepo.findAll();
     }
 
     @GetMapping("/resources/{id}")
-    public Optional<OhioResource> getResource(@PathVariable Long id) {
-        return Optional.ofNullable(ohioResourceRepo.findOhioResourceById(id));
+    public Optional<OhioResource> getResourceById(@PathVariable Long id) {
+        return ohioResourceRepo.findById(id);
     }
-
 }

@@ -8,7 +8,7 @@ const app = document.querySelector("#app");
 buildPage();
 
 function buildPage() {
-    app.innerHTML = "HELLO WORLD";
+    navHome();
     renderHome();
     renderFood();
 }
@@ -17,12 +17,18 @@ function renderHome() {
     app.innerHTML = Home();
 }
 
+function navHome() {
+    const homeBtn = document.querySelector("#homeBtn");
+    homeBtn.addEventListener("click", () => {
+        app.innerHTML = Home();
+    });
+}
+
 function renderFood() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("food-resources")) {
-            console.log("BUTTON IS WORKING");
-            app.innerText = "MADISON IS GREAT";
-            apiHelpers.getRequest("http://localhost:8080/resources", (food) => {
+            apiHelpers.getRequest("http://localhost:8080/resources", (foodResource) => {
+                app.innerHTML = Food(foodResource);
             });
         }
     });
