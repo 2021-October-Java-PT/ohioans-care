@@ -12,8 +12,8 @@ public class Region {
     private String region;
     @OneToMany(mappedBy = "region")
     private Collection<County> county;
-    @ManyToMany(mappedBy = "region")
-    private Collection<OhioResource> ohioResources;
+//    @ManyToMany(mappedBy = "region")
+//    private Collection<OhioResource> ohioResources;
 
     public Region(String region) {
         this.region = region;

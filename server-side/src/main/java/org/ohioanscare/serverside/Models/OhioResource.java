@@ -29,8 +29,8 @@ public class OhioResource {
     private Address address;
     @ManyToMany
     private Collection<Service> services;
-    @ManyToMany
-    private Collection<Region> region;
+//    @ManyToMany
+//    private Collection<Region> region;
 
 
     public OhioResource(String entityName, String organizationName, String description, String serving, String sunHours, String monHours, String tuesHours, String wedHours, String thursHours, String friHours, String satHours, String websiteUrl, String phone, String languages, Address address, Service... services) {
@@ -123,9 +123,9 @@ public class OhioResource {
         return services;
     }
 
-    public Collection<Region> getRegion() {
-        return region;
-    }
+//    public Collection<Region> getRegion() {
+//        return region;
+//    }
 
     public void setEntityName(String entityName) {
         this.entityName = entityName;
@@ -191,7 +191,7 @@ public class OhioResource {
         this.services = services;
     }
 
-    public void setRegion(Collection<Region> region) {
-        this.region = region;
-    }
+//    public void setRegion(Collection<Region> region) {
+//        this.region = region;
+//    }
 }
