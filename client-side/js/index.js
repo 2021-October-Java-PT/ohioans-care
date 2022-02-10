@@ -9,6 +9,13 @@ buildPage();
 
 function buildPage() {
     navHome();
+    
+    renderNorthwest();
+    renderNortheast();
+    renderCentral();
+    renderSouthwest();
+    renderSoutheast();
+
     renderHome();
     renderFood();
     renderHousing();
@@ -30,6 +37,56 @@ function navHome() {
     const homeBtn = document.querySelector("#homeBtn");
     homeBtn.addEventListener("click", () => {
         app.innerHTML = Home();
+    });
+}
+
+function renderNorthwest() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("region-nw")) {
+            apiHelpers.getRequest("http://localhost:8080/northwest/resources", (resource) => {
+                app.innerHTML = Resources(resource);
+            });
+        }
+    });
+}
+
+function renderNortheast() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("region-ne")) {
+            apiHelpers.getRequest("http://localhost:8080/northeast/resources", (resource) => {
+                app.innerHTML = Resources(resource);
+            });
+        }
+    });
+}
+
+function renderCentral() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("region-c")) {
+            apiHelpers.getRequest("http://localhost:8080/central/resources", (resource) => {
+                app.innerHTML = Resources(resource);
+            });
+        }
+    });
+}
+
+function renderSouthwest() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("region-sw")) {
+            apiHelpers.getRequest("http://localhost:8080/southwest/resources", (resource) => {
+                app.innerHTML = Resources(resource);
+            });
+        }
+    });
+}
+
+function renderSoutheast() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("region-se")) {
+            apiHelpers.getRequest("http://localhost:8080/southeast/resources", (resource) => {
+                app.innerHTML = Resources(resource);
+            });
+        }
     });
 }
 

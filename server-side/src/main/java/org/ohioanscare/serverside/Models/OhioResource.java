@@ -12,6 +12,7 @@ public class OhioResource {
     private Long id;
     private String entityName;
     private String organizationName;
+    @Lob
     private String description;
     private String serving;
     private String sunHours; //Format ---> HH:MM - HH:MM (12-hour format)

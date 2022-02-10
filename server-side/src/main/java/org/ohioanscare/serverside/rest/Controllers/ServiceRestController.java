@@ -21,12 +21,8 @@ public class ServiceRestController {
     }
 
     @GetMapping("/services/{service}")
-    public Optional<Service> getServiceById(@PathVariable String service) {
+    public Optional<Service> getServiceByService(@PathVariable String service) {
         return Optional.ofNullable(serviceRepo.findByServiceIgnoreCase(service));
     }
 
-//    @GetMapping("/services/{id}")
-//    public Optional<Service> getServiceById(@PathVariable Long id) {
-//        return serviceRepo.findById(id);
-//    }
 }

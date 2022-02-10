@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RegionRepository extends CrudRepository<Region, Long> {
+    Region findByRegionIgnoreCase(String region);
 }
