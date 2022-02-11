@@ -87,7 +87,7 @@ public class Populator implements CommandLineRunner {
         //ADDRESSES && OHIO RESOURCES
         Address fccStarkAddress = new Address("Market Avenue", " ", "Canton", stark, " Ohio", z44720, northeast);
         addressRepo.save(fccStarkAddress);
-        OhioResource fccStark = new OhioResource("Common Goods", "First Christian Church - Canton", "Food panty", "Anyone In Need", "CLOSED", "CLOSED", "CLOSED", "CLOSED", "CLOSED", "12:00 PM -  2:00PM", "CLOSED", "https://www.firstchristian.com/assistance", "(330)495-5075", "English", fccStarkAddress, food);
+        OhioResource fccStark = new OhioResource("Common Goods - Food Assistance", "First Christian Church - Canton", "Food panty", "Anyone In Need", "CLOSED", "CLOSED", "CLOSED", "CLOSED", "CLOSED", "12:00 PM -  2:00PM", "CLOSED", "https://www.firstchristian.com/assistance", "(330)495-5075", "English", fccStarkAddress, food);
         ohioResourceRepo.save(fccStark);
 
 

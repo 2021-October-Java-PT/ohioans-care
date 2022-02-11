@@ -1,13 +1,7 @@
 package org.ohioanscare.serverside.rest.Controllers;
 
-import org.ohioanscare.serverside.Models.OhioResource;
-import org.ohioanscare.serverside.Models.Region;
-import org.ohioanscare.serverside.Models.Service;
-import org.ohioanscare.serverside.Models.ZipCode;
-import org.ohioanscare.serverside.Repositories.OhioResourceRepository;
-import org.ohioanscare.serverside.Repositories.RegionRepository;
-import org.ohioanscare.serverside.Repositories.ServiceRepository;
-import org.ohioanscare.serverside.Repositories.ZipCodeRepository;
+import org.ohioanscare.serverside.Models.*;
+import org.ohioanscare.serverside.Repositories.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -28,6 +22,9 @@ public class OhioResourceRestController {
     private RegionRepository regionRepo;
 
     @Resource
+    private AddressRepository addressRepo;
+
+    @Resource
     private ZipCodeRepository zipCodeRepo;
 
 
@@ -41,21 +38,35 @@ public class OhioResourceRestController {
         return ohioResourceRepo.findById(id);
     }
 
-    @RequestMapping("/resources/services/{serviceName}")
-    public Collection<OhioResource> getAllResourcesByService(@PathVariable(value = "serviceName") String serviceName) {
-        Service service = serviceRepo.findByServiceIgnoreCase(serviceName);
+    @GetMapping("/resources/{serviceType}")
+    public Collection<OhioResource> getAllResourcesByService(@PathVariable(value = "serviceType") String serviceType) {
+        Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
         return ohioResourceRepo.findByServicesContains(Optional.ofNullable(service));
     }
 
-    @RequestMapping("/{regionName}/resources")
+    @GetMapping("/{regionName}/resources")
     public Collection<OhioResource> getAllResourcesInARegion(@PathVariable(value = "regionName") String regionName) {
         Region region = regionRepo.findByRegionIgnoreCase(regionName);
         return ohioResourceRepo.findByAddress_Region(region);
     }
 
-    @GetMapping("/zipcode/{zipCodeNum}/resources")
+    @GetMapping("/zip-codes/{zipCodeNum}/resources")
     public Collection<OhioResource> getAllResourcesByZipCode(@PathVariable(value = "zipCodeNum") String zipCodeNum) {
         ZipCode zipCode = zipCodeRepo.findByZipCodeContains(zipCodeNum);
         return ohioResourceRepo.findByAddress_ZipCode(zipCode);
+    }
+
+    @GetMapping("/zip-codes/{zipCodeNum}/resources/{serviceType}")
+    public Collection<OhioResource> getAllResourcesByZipCodeAndService(@PathVariable(value = "zipCodeNum") String zipCodeNum, @PathVariable (value = "serviceType") String serviceType) {
+        ZipCode zipCode = zipCodeRepo.findByZipCodeContains(zipCodeNum);
+        Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
+        return ohioResourceRepo.findByAddress_ZipCodeAndServicesContains(zipCode, service);
+    }
+
+    @GetMapping("/{regionName}/resources/{serviceType}")
+    public Collection<OhioResource> getAllResourcesByRegionAndService(@PathVariable(value = "regionName") String regionName, @PathVariable (value = "serviceType") String serviceType) {
+        Region region = regionRepo.findByRegionIgnoreCase(regionName);
+        Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
+        return ohioResourceRepo.findByAddress_RegionAndServicesContains(region, service);
     }
 }

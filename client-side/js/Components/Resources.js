@@ -6,7 +6,7 @@ export default function Resources(resource) {
       <div class="resource-wrapper">
         <div class="resource-box">
           <div class="resource-header">
-            <span id="program-name-header">Program Name: ${resource.entityName}
+            <span id="program-name-header">${resource.entityName}
               <input type="hidden" id="programmingLanguageId" value="${resource.id}">
             </span><br>
             <span id="org-name-header">Provided By: ${resource.organizationName}</span>
