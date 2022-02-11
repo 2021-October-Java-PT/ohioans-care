@@ -19,9 +19,10 @@ public class Address {
     private String state;
     @OneToOne
     private ZipCode zipCode;
-    @OneToOne
+    @ManyToOne
     private Region region;
     @OneToMany
+    @JsonIgnore
     private Collection<OhioResource> ohioResources;
 
 

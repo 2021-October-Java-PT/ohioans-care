@@ -1,8 +1,8 @@
 import About from "./components/About.js";
 import Home from "./components/Home.js";
 import Resources from "./Components/Resources.js";
+import Search from "./functions/Search.js"
 import Services from "./Components/Services.js";
-
 import apiHelpers from "./api-helpers/apiHelpers.js";
 
 const app = document.querySelector("#app");
@@ -14,8 +14,9 @@ function buildPage() {
 
     navAbout();
     navServices();
-    
-    renderNorthwest();
+
+    renderRegion();
+
     renderNortheast();
     renderCentral();
     renderSouthwest();
@@ -52,22 +53,25 @@ function navHome() {
 function navServices() {
     const aboutElem = document.querySelector(".nav-services");
     aboutElem.addEventListener("click", () => {
-      app.innerHTML = Services();
+        app.innerHTML = Services();
     });
-  }
+}
 
 function navAbout() {
     const aboutElem = document.querySelector(".nav-about");
     aboutElem.addEventListener("click", () => {
-      app.innerHTML = About();
+        app.innerHTML = About();
     });
-  }
+}
 
-function renderNorthwest() {
+const region = document.querySelector(".region").id;
+
+function renderRegion() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("region-nw")) {
-            apiHelpers.getRequest("http://localhost:8080/northwest/resources", (resource) => {
+        if (event.target.classList.contains("region")) {
+            apiHelpers.getRequest(`http://localhost:8080/resources/regions/${region}`, (resource) => {
                 app.innerHTML = Resources(resource);
+                console.log(resource);
             });
         }
     });
@@ -76,7 +80,7 @@ function renderNorthwest() {
 function renderNortheast() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("region-ne")) {
-            apiHelpers.getRequest("http://localhost:8080/northeast/resources", (resource) => {
+            apiHelpers.getRequest("http://localhost:8080/resources/regions/northeast", (resource) => {
                 app.innerHTML = Resources(resource);
             });
         }
@@ -86,7 +90,7 @@ function renderNortheast() {
 function renderCentral() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("region-c")) {
-            apiHelpers.getRequest("http://localhost:8080/central/resources", (resource) => {
+            apiHelpers.getRequest("http://localhost:8080/resources/regions/central", (resource) => {
                 app.innerHTML = Resources(resource);
             });
         }
@@ -96,7 +100,7 @@ function renderCentral() {
 function renderSouthwest() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("region-sw")) {
-            apiHelpers.getRequest("http://localhost:8080/southwest/resources", (resource) => {
+            apiHelpers.getRequest("http://localhost:8080/resources/regions/southwest", (resource) => {
                 app.innerHTML = Resources(resource);
             });
         }
@@ -106,7 +110,7 @@ function renderSouthwest() {
 function renderSoutheast() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("region-se")) {
-            apiHelpers.getRequest("http://localhost:8080/southeast/resources", (resource) => {
+            apiHelpers.getRequest("http://localhost:8080/resources/regions/southeast", (resource) => {
                 app.innerHTML = Resources(resource);
             });
         }

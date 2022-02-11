@@ -8,7 +8,7 @@ export default function Search() {
 
     searchSubmitBtn.addEventListener("click", () => {
         const searchString = searchBar.value;
-        apiHelpers.getRequest(`http://localhost:8080/zip-codes/${searchString}/resources`, (resource) => {
+        apiHelpers.getRequest(`http://localhost:8080/resources/zip-codes/${searchString}`, (resource) => {
             app.innerHTML = Resources(resource);
         });
     });

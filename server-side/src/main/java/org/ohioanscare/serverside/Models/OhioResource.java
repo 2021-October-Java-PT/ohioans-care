@@ -28,11 +28,9 @@ public class OhioResource {
     private String phone;
     private String languages;
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "address_id")
     private Address address;
     @ManyToMany
-    @JsonIgnore
     private Collection<Service> services;
 
 

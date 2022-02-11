@@ -15,6 +15,9 @@ public class Region {
     @OneToMany(mappedBy = "region")
     @JsonIgnore
     private Collection<County> county;
+    @OneToMany(mappedBy = "region")
+    @JsonIgnore
+    private Collection<Address> addresses;
 
 
     public Region(String region) {
