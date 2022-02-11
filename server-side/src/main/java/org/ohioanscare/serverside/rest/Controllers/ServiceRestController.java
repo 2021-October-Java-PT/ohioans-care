@@ -20,9 +20,9 @@ public class ServiceRestController {
         return (Collection<Service>) serviceRepo.findAll();
     }
 
-    @GetMapping("/services/{service}")
-    public Optional<Service> getServiceByService(@PathVariable String service) {
-        return Optional.ofNullable(serviceRepo.findByServiceIgnoreCase(service));
+    @GetMapping("/services/{serviceType}")
+    public Optional<Service> getServiceByService(@PathVariable String serviceType) {
+        return Optional.ofNullable(serviceRepo.findByServiceIgnoreCase(serviceType));
     }
 
 }

@@ -22,9 +22,9 @@ public class RegionRestController {
         return (Collection<Region>) regionRepo.findAll();
     }
 
-    @GetMapping("/regions/{region}")
-    public Region getRegionByRegion(@PathVariable String region) {
-        return regionRepo.findByRegionIgnoreCase(region);
+    @GetMapping("/regions/{regionName}")
+    public Region getRegionByRegion(@PathVariable String regionName) {
+        return regionRepo.findByRegionIgnoreCase(regionName);
     }
 
 }

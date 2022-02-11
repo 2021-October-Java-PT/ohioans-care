@@ -18,25 +18,35 @@ public class Service {
     @JsonIgnore
     private Collection<OhioResource> ohioResources;
 
+
     public Service(String service) {
         this.service = service;
     }
 
     public Service() {}
 
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getService() {
         return service;
     }
 
+    public void setService(String service) {
+        this.service = service;
+    }
+
     public Collection<OhioResource> getOhioResources() {
         return ohioResources;
     }
 
-    public void setService(String service) {
-        this.service = service;
+    public void setOhioResources(Collection<OhioResource> ohioResources) {
+        this.ohioResources = ohioResources;
     }
 }
