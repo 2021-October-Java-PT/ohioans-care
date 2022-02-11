@@ -1,7 +1,13 @@
 package org.ohioanscare.serverside.rest.Controllers;
 
 import org.ohioanscare.serverside.Models.OhioResource;
+import org.ohioanscare.serverside.Models.Region;
+import org.ohioanscare.serverside.Models.Service;
+import org.ohioanscare.serverside.Models.ZipCode;
 import org.ohioanscare.serverside.Repositories.OhioResourceRepository;
+import org.ohioanscare.serverside.Repositories.RegionRepository;
+import org.ohioanscare.serverside.Repositories.ServiceRepository;
+import org.ohioanscare.serverside.Repositories.ZipCodeRepository;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -15,9 +21,17 @@ public class OhioResourceRestController {
     @Resource
     private OhioResourceRepository ohioResourceRepo;
 
+    @Resource
+    private ServiceRepository serviceRepo;
+
+    @Resource
+    private RegionRepository regionRepo;
+
+    @Resource
+    private ZipCodeRepository zipCodeRepo;
 
 
-    @RequestMapping("/resources")
+    @GetMapping("/resources")
     public Collection<OhioResource> getAllResource() {
         return (Collection<OhioResource>) ohioResourceRepo.findAll();
     }
@@ -25,5 +39,23 @@ public class OhioResourceRestController {
     @GetMapping("/resources/{id}")
     public Optional<OhioResource> getResourceById(@PathVariable Long id) {
         return ohioResourceRepo.findById(id);
+    }
+
+    @RequestMapping("/resources/services/{serviceName}")
+    public Collection<OhioResource> getAllResourcesByService(@PathVariable(value = "serviceName") String serviceName) {
+        Service service = serviceRepo.findByServiceIgnoreCase(serviceName);
+        return ohioResourceRepo.findByServicesContains(Optional.ofNullable(service));
+    }
+
+    @RequestMapping("/{regionName}/resources")
+    public Collection<OhioResource> getAllResourcesInARegion(@PathVariable(value = "regionName") String regionName) {
+        Region region = regionRepo.findByRegionIgnoreCase(regionName);
+        return ohioResourceRepo.findByAddress_Region(region);
+    }
+
+    @GetMapping("/zipcode/{zipCodeNum}/resources")
+    public Collection<OhioResource> getAllResourcesByZipCode(@PathVariable(value = "zipCodeNum") String zipCodeNum) {
+        ZipCode zipCode = zipCodeRepo.findByZipCodeContains(zipCodeNum);
+        return ohioResourceRepo.findByAddress_ZipCode(zipCode);
     }
 }

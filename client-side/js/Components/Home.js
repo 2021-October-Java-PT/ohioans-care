@@ -11,14 +11,14 @@ import transitImg from "../../assets/TRANSIT.png";
 import workImg from "../../assets/WORK.png";
 
 export default function Home() {
-    return `
+  return `
         <div id="app">
         <div class="jumbotron text-center" style="background-image: url(${jumbotronImg});">
         <div class="jumbotrn-cont">
           <h1>WE ARE HERE TO HELP</h1>
         <div class="search-section">
         <p>OHIO REGIONS</p>
-        <h3>Northwest | Northeast | Central | Southwest | Southeast</h3>
+        <h3><a class="region-nw" style="color: white">Northwest</a> | <a class="region-ne" style="color: white">Northeast</a> | <a class="region-c" style="color: white">Central</a> | <a class="region-sw" style="color: white">Southwest</a> | <a class="region-se" style="color: white">Southeast</a></h3>
         <div class="form-cont">
           <form>
             <div class="input-group">

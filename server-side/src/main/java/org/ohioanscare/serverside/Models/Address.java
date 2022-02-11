@@ -1,5 +1,7 @@
 package org.ohioanscare.serverside.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -19,6 +21,7 @@ public class Address {
     @OneToOne
     private Region region;
     @OneToMany
+    @JsonIgnore
     private Collection<OhioResource> ohioResources;
 
     public Address(String addressLine1, String addressLine2, String city, County county, String state, ZipCode zipCode, Region region) {

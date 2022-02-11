@@ -1,5 +1,7 @@
 package org.ohioanscare.serverside.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +15,8 @@ public class Service {
     private Long id;
     private String service;
     @ManyToMany(mappedBy = "services")
-    private Collection<OhioResource> ohioResource;
+    @JsonIgnore
+    private Collection<OhioResource> ohioResources;
 
     public Service(String service) {
         this.service = service;
@@ -27,6 +30,10 @@ public class Service {
 
     public String getService() {
         return service;
+    }
+
+    public Collection<OhioResource> getOhioResources() {
+        return ohioResources;
     }
 
     public void setService(String service) {

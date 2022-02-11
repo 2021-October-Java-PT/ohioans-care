@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ZipCodeRepository extends CrudRepository<ZipCode, Long> {
+    ZipCode findByZipCodeContains(String zipCode);
 }
