@@ -1,6 +1,8 @@
+import About from "./components/About.js";
 import Home from "./components/Home.js";
 import Resources from "./Components/Resources.js";
-import Search from "./functions/Search.js";
+import Services from "./Components/Services.js";
+
 import apiHelpers from "./api-helpers/apiHelpers.js";
 
 const app = document.querySelector("#app");
@@ -10,6 +12,9 @@ buildPage();
 function buildPage() {
     navHome();
 
+    navAbout();
+    navServices();
+    
     renderNorthwest();
     renderNortheast();
     renderCentral();
@@ -27,7 +32,7 @@ function buildPage() {
     renderEducation();
     renderWork();
     renderLegal();
-    }
+}
 
 function renderHome() {
     app.innerHTML = Home();
@@ -40,8 +45,23 @@ function navHome() {
         app.innerHTML = Home();
 
         Search();
+        navAbout();
     });
 }
+
+function navServices() {
+    const aboutElem = document.querySelector(".nav-services");
+    aboutElem.addEventListener("click", () => {
+      app.innerHTML = Services();
+    });
+  }
+
+function navAbout() {
+    const aboutElem = document.querySelector(".nav-about");
+    aboutElem.addEventListener("click", () => {
+      app.innerHTML = About();
+    });
+  }
 
 function renderNorthwest() {
     app.addEventListener("click", (event) => {
