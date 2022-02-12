@@ -49,7 +49,6 @@ export default function Resources(resource) {
           
         </form>
       </div>
-
 </div>
   <div class="col-sm-10" style="background-color:#f7f8f8;">
     ${resource.map(resource => {    

@@ -18,5 +18,7 @@
     "jest": "^27.0.6",
     "parcel": "^2.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "youtube-video-js": "^3.5.0"
+  }
 }
