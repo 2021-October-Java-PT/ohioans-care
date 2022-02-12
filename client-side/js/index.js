@@ -14,6 +14,7 @@ function buildPage() {
 
     navAbout();
     navServices();
+    
 
     renderNorthwest();
     renderNortheast();
@@ -46,8 +47,10 @@ function navHome() {
 
         Search();
         navAbout();
+        
     });
 }
+
 
 function navServices() {
     const aboutElem = document.querySelector(".nav-services");
