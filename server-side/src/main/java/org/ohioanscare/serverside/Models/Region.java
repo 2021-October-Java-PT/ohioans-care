@@ -1,5 +1,7 @@
 package org.ohioanscare.serverside.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -11,9 +13,12 @@ public class Region {
     private Long id;
     private String region;
     @OneToMany(mappedBy = "region")
+    @JsonIgnore
     private Collection<County> county;
-//    @ManyToMany(mappedBy = "region")
-//    private Collection<OhioResource> ohioResources;
+    @OneToMany(mappedBy = "region")
+    @JsonIgnore
+    private Collection<Address> addresses;
+
 
     public Region(String region) {
         this.region = region;
@@ -21,8 +26,13 @@ public class Region {
 
     public Region() {}
 
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRegion() {
@@ -31,5 +41,13 @@ public class Region {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public Collection<County> getCounty() {
+        return county;
+    }
+
+    public void setCounty(Collection<County> county) {
+        this.county = county;
     }
 }

@@ -1,10 +1,10 @@
 package org.ohioanscare.serverside.Repositories;
 
-import org.ohioanscare.serverside.Models.Address;
+import org.ohioanscare.serverside.Models.City;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AddressRepository extends CrudRepository<Address, Long> {
-    Address findByCityContains(String city);
+public interface CityRepository extends CrudRepository<City,Long> {
+    City findByCityContainsIgnoreCase(String city);
 }
