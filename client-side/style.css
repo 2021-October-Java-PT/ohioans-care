@@ -1,8 +1,9 @@
 body {
   font: 400 15px Lato, sans-serif;
-  line-height: 1.8;
+  /* line-height: 1.8; */
   color: #818181;
   margin: 0%;
+  padding: 0;
 }
 
 h2 {
@@ -73,7 +74,7 @@ h4 {
 
 .navbar {
   margin-bottom: 0;
-  background-color: #d9d9d9;
+  background-color: #db6077;
   z-index: 9999;
   border: 0;
   font-size: 12px !important;
@@ -98,32 +99,35 @@ h4 {
   border-color: transparent;
   color: #fff !important;
 }
-.serv-main-cont{
+.serv-main-cont {
   margin-top: 50px;
 }
-.serv-cont{
+.serv-cont {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
-.serv-cont-par{
+.serv-cont-par {
   text-align: justify;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.glyphicon{
+.glyphicon {
   color: #db6077;
 }
-
+.pg-wrap {
+}
 footer .glyphicon {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #ef3a5d;
+  color: #fff;
 }
 
 footer {
   background-color: #db6077;
-  margin-top: -50px; 
+  margin: 0;
   color: #fff;
- 
 }
 
 /* MADISON'S STYLING START */
@@ -190,6 +194,11 @@ ul {
 
 .resource-address {
   grid-area: "resource-address";
+}
+
+.filter-icon-cont {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* MADISON'S STYLING START */
