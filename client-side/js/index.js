@@ -15,8 +15,7 @@ function buildPage() {
     navAbout();
     navServices();
 
-    renderRegion();
-
+    renderNorthwest();
     renderNortheast();
     renderCentral();
     renderSouthwest();
@@ -64,14 +63,11 @@ function navAbout() {
     });
 }
 
-const region = document.querySelector(".region").id;
-
-function renderRegion() {
+function renderNorthwest() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("region")) {
-            apiHelpers.getRequest(`http://localhost:8080/resources/regions/${region}`, (resource) => {
+        if (event.target.classList.contains("region-nw")) {
+            apiHelpers.getRequest("http://localhost:8080/resources/regions/northeast", (resource) => {
                 app.innerHTML = Resources(resource);
-                console.log(resource);
             });
         }
     });

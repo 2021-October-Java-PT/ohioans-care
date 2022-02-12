@@ -18,7 +18,7 @@ export default function Home() {
           <h1>WE ARE HERE TO HELP</h1>
         <div class="search-section">
         <p>OHIO REGIONS</p>
-        <h3><a class="region" style="color: white" id="northwest">Northwest</a> | <a class="region-ne" style="color: white" id="northeast">Northeast</a> | <a class="region-c" style="color: white" id="central">Central</a> | <a class="region-sw" style="color: white" id="southwest">Southwest</a> | <a class="region-se" style="color: white" id="southeast">Southeast</a></h3>
+        <h3><a class="region-nw" style="color: white">Northwest</a> | <a class="region-ne" style="color: white">Northeast</a> | <a class="region-c" style="color: white">Central</a> | <a class="region-sw" style="color: white">Southwest</a> | <a class="region-se" style="color: white">Southeast</a></h3>
         <div class="form-cont">
           <form>
             <div class="input-group">
