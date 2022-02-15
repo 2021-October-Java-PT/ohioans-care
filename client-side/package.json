@@ -19,6 +19,7 @@
     "parcel": "^2.2.1"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.13.5",
     "youtube-video-js": "^3.5.0"
   }
 }
