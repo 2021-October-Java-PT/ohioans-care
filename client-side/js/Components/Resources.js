@@ -6,6 +6,8 @@ export default function Resources(resource) {
     <div class="container">
         <h2>Filter Results By:</h2>
         <p>LOCATION:</p>
+        <iframe width="250" height="250" style="border:0" loading="lazy" allowfullscreen
+         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwY5NtXrpNogRFtmfnDlkzeU&key=AIzaSyDrUTfivqK6E0je5MjI25olB7zrIaiSIqc"></iframe>
         <form>
           <label class="checkbox-inline">
             <input type="checkbox" value="">Miles
