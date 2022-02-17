@@ -18,4 +18,5 @@ public interface OhioResourceRepository extends CrudRepository <OhioResource, Lo
     Collection<OhioResource> findByAddress_CountyAndServicesContains(County county, Service service);
     Collection<OhioResource> findByAddress_ZipCodeAndServicesContains(ZipCode address_zipCode, Service service);
     Collection<OhioResource> findByAddress_CityAndServicesContains(City address_city, Service service);
+    Collection<OhioResource> findByAddress_County_CountyIgnoreCaseOrAddress_City_CityIgnoreCaseOrAddress_ZipCode_ZipCode(String county, String city, String cipCode);
 }

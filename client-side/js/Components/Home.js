@@ -22,8 +22,7 @@ export default function Home() {
         <div class="form-cont">
           <form>
             <div class="input-group">
-              <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your Zip Code, City, or County"
-                required>
+              <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your Zip Code, City, or County" required>
               <div class="input-group-btn">
                 <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
               </div>
