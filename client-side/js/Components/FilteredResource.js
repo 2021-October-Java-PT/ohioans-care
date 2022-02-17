@@ -1,5 +1,36 @@
-export default function Resources(resources) {  
-    console.log(resources);
+export default function FilteredResources(resources) {
+
+
+    // let foodResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "food"));
+    // // console.log(foodResources);
+
+    // let goodResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "goods"));
+    // // console.log(goodResources);
+
+    // let housingResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "housing"));
+    // // console.log(housingResources);
+
+    // let transitResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "transit"));
+    // // console.log(transitResources);
+
+    // let careResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "care"));
+    // console.log(careResources);
+
+    // let moneyResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "money"));
+    // // console.log(moneyResources);
+
+    // let healthResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "health"));
+    // // console.log(healthResources);
+
+    // let educationResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "education"));
+    // // console.log(educationResources);
+
+    // let legalResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "legal"));
+    // // console.log(legalResources);
+
+    // let workResources = resource.filter((resource) => resource.services.some((services) => services.service.toLocaleLowerCase() === "work"));
+    // // console.log(workResources);
+
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
         <div class="col-sm-2 pg-wrap">

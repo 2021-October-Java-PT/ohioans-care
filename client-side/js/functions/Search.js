@@ -1,4 +1,4 @@
-import Resources from "../Components/Resources.js";
+import FilteredResource from "../Components/FilteredResource.js";
 import apiHelpers from "../api-helpers/apiHelpers.js";
 
 export default function Search() {
@@ -8,8 +8,10 @@ export default function Search() {
 
     searchSubmitBtn.addEventListener("click", () => {
         const searchString = searchBar.value;
-        apiHelpers.getRequest(`http://localhost:8080/resources/zip-codes/${searchString}`, (resource) => {
-            app.innerHTML = Resources(resource);
+        console.log(searchString);
+        apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+            console.log(resources)
+            app.innerHTML = FilteredResource(resources);
         });
     });
 }
