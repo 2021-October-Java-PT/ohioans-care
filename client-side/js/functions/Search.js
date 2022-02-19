@@ -1,4 +1,4 @@
-import FilteredResource from "../Components/FilteredResource.js";
+import Resources from "../Components/Resources.js";
 import apiHelpers from "../api-helpers/apiHelpers.js";
 
 export default function Search() {
@@ -11,7 +11,30 @@ export default function Search() {
         console.log(searchString);
         apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
             console.log(resources)
-            app.innerHTML = FilteredResource(resources);
+            app.innerHTML = Resources(resources);
         });
     });
+
+    window.addEventListener("keydown", function (event) {
+        if (event.defaultPrevented) {
+            return; // Do nothing if the event was already processed
+        }
+
+        switch (event.key) {
+            case "Enter":
+                const searchString = searchBar.value;
+                console.log(searchString);
+                apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+                    console.log(resources)
+                    app.innerHTML = Resources(resources);
+                });
+                break;
+
+            default:
+                return; // Quit when this doesn't handle the key event.
+        }
+
+        // Cancel the default action to avoid it being handled twice
+        event.preventDefault();
+    }, true);
 }

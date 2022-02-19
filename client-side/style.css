@@ -208,7 +208,11 @@ ul {
   margin-right: auto;
 }
 
-/* MADISON'S STYLING START */
+.hidden {
+  display: none;
+}
+
+/* MADISON'S STYLING END */
 
 @keyframes slide {
   0% {
