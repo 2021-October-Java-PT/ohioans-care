@@ -1,6 +1,6 @@
 import Resources from "./Resources.js";
 
-export default function Filters() {  
+export default function Filters() {
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
         <div class="col-sm-2 pg-wrap">
@@ -62,4 +62,4 @@ export default function Filters() {
         </div>
     </div>
     `;
-  }
+}

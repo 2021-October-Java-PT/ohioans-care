@@ -1,4 +1,4 @@
-export default function Resources(resources) {  
+export default function Resources(resources) {
     console.log(resources);
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
@@ -108,4 +108,4 @@ export default function Resources(resources) {
         </div>
     </div>
     `;
-  }
+}
