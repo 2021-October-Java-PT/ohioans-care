@@ -1,4 +1,4 @@
-export default function OhioResources(resources) {  
+export default function OhioResources(resources) {
     console.log(resources);
     return `
     
@@ -52,4 +52,4 @@ export default function OhioResources(resources) {
         `;
         }).join("")}
     `;
-  }
+}
