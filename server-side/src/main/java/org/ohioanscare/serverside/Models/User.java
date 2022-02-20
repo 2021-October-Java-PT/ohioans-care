@@ -1,10 +1,9 @@
 package org.ohioanscare.serverside.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 
 @Entity
 public class User {
@@ -21,18 +20,22 @@ public class User {
     @ManyToOne
     private ZipCode zipCode;
 
+    @ManyToMany
+    private Collection<OhioResource> resources;
+
 
     public User() {
 
     }
 
-    public User(String firstName, String lastName, String userName, String password, String email, ZipCode zipCode){
+    public User(String firstName, String lastName, String userName, String password, String email, ZipCode zipCode, OhioResource ...resources){
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.zipCode = zipCode;
+        this.resources = new HashSet<>(Arrays.asList(resources));
     }
 
     public Long getId() {
@@ -59,7 +62,11 @@ public class User {
         return email;
     }
 
-    public Collection<ZipCode> getZipCode() {
-        return (Collection<ZipCode>) zipCode;
+    public ZipCode getZipCode() {
+        return zipCode;
+    }
+
+    public Collection<OhioResource> getResources() {
+        return resources;
     }
 }

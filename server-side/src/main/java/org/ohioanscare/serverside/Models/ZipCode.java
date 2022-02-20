@@ -14,8 +14,8 @@ public class ZipCode {
     private String zipCode;
     private String zipCodePlusFour;
 
-    @OneToMany(mappedBy = "user")
-    private Collection<User> user;
+    @OneToMany(mappedBy = "zipCode")
+    private Collection<User> users;
 
 
     public ZipCode(String zipCode, String zipCodePlusFour) {
