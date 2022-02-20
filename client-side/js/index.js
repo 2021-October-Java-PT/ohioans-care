@@ -127,53 +127,66 @@ function renderSouthwest() {
 function renderSoutheast() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("region-se")) {
+            console.log("This is working");
             apiHelpers.getRequest("http://localhost:8080/resources/regions/southeast", (resources) => {
                 app.innerHTML = FiltersApp();
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
                 const location = "southeast";
-                filterByLocationAndService(location);
-                // filterFood();
+                // filterByLocationAndService(location);
+                filterFood(resources, resourcesContainer);
             });
         }
     });
 }
 
-// function filterFood() {
-//     const foodBtn = document.querySelector("input[name=filter-food-resources]");
-//     foodBtn.addEventListener("change", (event) => {
+function filterFood(resources, resourcesContainer) {
+    console.log("FOOD: ", resources)
+    let filteredResources = []
+    const filterBtn = document.querySelector("#filter-btn");
+    const foodCheckBox = document.querySelector("#filter-food-resources");
+    const housingCheckBox = document.querySelector("#filter-housing-resources");
+    const transitCheckBox = document.querySelector("#filter-transit-resources");
+    const careCheckBox = document.querySelector("#filter-care-resources");
+    let food = "";
+    let housing = "";
+    let transit = "";
+    let care = "";
 
-//         if (event.target.classList.contains("filter-food-resources")) {
-//             console.log("delegation working?")
-//             const toggle = () => document.querySelectorAll(".resource-wrapper").forEach(label => label.classList.toggle('hidden'))
-//             const resourceBox = document.querySelectorAll("#labels");
-//             console.log(resourceBox);
-//             resourceBox.addEventListener('change', toggle);
-
-            // const resourceWrapper = document.querySelectorAll(".resource-wrapper");
-            // resourceWrapper => resourceWrapper.classList.toggle("hidden");
-//         }
-//     })
-// }
-
-
-// function filterFood(location) {
-
-//     console.log("FUNCTION WORKS");
-//     const foodBtn = document.querySelector("input[name=filter-work-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-food-resources")) {
-//             console.log("Event delegation works?")
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/food`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-
-// }
+    // filteredResources = [];
+    filterBtn.addEventListener("click", (event) => {
+        if (foodCheckBox.checked) {
+            food = "food";
+        } else {
+            food = "";
+        }
+        if (housingCheckBox.checked) {
+            housing = "housing";
+        } else {
+            housing = "";
+        }
+        if (transitCheckBox.checked) {
+            transit = "transit";
+        } else {
+            transit = "";
+        }
+        if (careCheckBox.checked) {
+            care = "care";
+        } else {
+            care = "";
+        }
+        resources.map(resource => {
+            resource.services.map(service => {
+                if (service.service.toLocaleLowerCase() === food || service.service.toLocaleLowerCase() === care || service.service.toLocaleLowerCase() === housing || service.service.toLocaleLowerCare() === transit) {
+                    filteredResources.push(resource);
+                    console.log(filteredResources);
+                }
+            })
+        })
+        resourcesContainer.innerHTML = OhioResources(filteredResources.length ? filteredResources : resources);
+        filteredResources = [];
+    })
+}
 
 function renderFood() {
     app.addEventListener("click", (event) => {

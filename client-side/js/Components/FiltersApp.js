@@ -50,8 +50,9 @@ export default function Filters() {
                     </label><br>
                     <label class="checkbox-inline">
                         <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="" name="filter-work-resources">Work
-                    </label><br>            
-                </form>
+                    </label><br>
+                    </form>
+                    <button id="filter-btn">Filter</button>
             </div>
         </div>
         
