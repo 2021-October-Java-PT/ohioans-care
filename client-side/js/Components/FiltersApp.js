@@ -28,28 +28,28 @@ export default function Filters() {
                         <input type="checkbox" id="filter-care-resources" class="filter-care-resources" value="care" name="filter-care-resources">Care
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-education-resources" class="filter-education-resources" value="" name="filter-education-resources">Education
+                        <input type="checkbox" id="filter-education-resources" class="filter-education-resources" value="education" name="filter-education-resources">Education
                     </label><br>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-goods-resources" class="filter-goods-resources" value="" name="filter-goods-resources">Goods
+                        <input type="checkbox" id="filter-goods-resources" class="filter-goods-resources" value="goods" name="filter-goods-resources">Goods
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-health-resources" class="filter-health-resources" value="" name="filter-health-resources">Health
+                        <input type="checkbox" id="filter-health-resources" class="filter-health-resources" value="health" name="filter-health-resources">Health
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-housing-resources" class="filter-housing-resources" value="" name="filter-housing-resources">Housing
+                        <input type="checkbox" id="filter-housing-resources" class="filter-housing-resources" value="housing" name="filter-housing-resources">Housing
                     </label><br>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-legal-resources" class="filter-legal-resources" value="" name="filter-legal-resources">Legal
+                        <input type="checkbox" id="filter-legal-resources" class="filter-legal-resources" value="legal" name="filter-legal-resources">Legal
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-money-resources" class="filter-money-resources" value="" name="filter-money-resources">Money
+                        <input type="checkbox" id="filter-money-resources" class="filter-money-resources" value="money" name="filter-money-resources">Money
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-transit-resources" class="filter-transit-resources" value="" name="filter-transit-resources">Transit
+                        <input type="checkbox" id="filter-transit-resources" class="filter-transit-resources" value="transit" name="filter-transit-resources">Transit
                     </label><br>
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="" name="filter-work-resources">Work
+                        <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="work" name="filter-work-resources">Work
                     </label><br>
                     </form>
                     <button id="filter-btn">Filter</button>
