@@ -32,6 +32,9 @@ public class Populator implements CommandLineRunner {
     @Resource
     public ServiceRepository serviceRepo;
 
+    @Resource
+    public UserRepository userRepo;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -536,7 +539,13 @@ public class Populator implements CommandLineRunner {
         ohioResourceRepo.save(urbanMissionFoodWarehouseFranklin);
         ohioResourceRepo.save(vineyardFreeHealthClinics);
         ohioResourceRepo.save(westsideFreeStoreMinistries);
+      
+      
+        User user1 = new User("Madison", "Mitchell", "madDawg","TJistheGOAT", "madDawgMitchell@gmail.com", z43952, urbanMissionFoodWarehouseFranklin, schoolBrightPromiseJefferson, freeCollegeBenefitJefferson);
+        userRepo.save(user1);
 
+        User user2 = new User("Aaron", "Dormer", "hootie4lyfe", "undercoverGoat", "hootiefan75@gmail.com", z43953, primeTimeCenterJefferson, goodwillIJefferson);
+        userRepo.save(user2);
 
     }
 }
