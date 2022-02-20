@@ -115,8 +115,6 @@ function renderNorthwest() {
                 app.innerHTML = FiltersApp();
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
-                const location = "northwest";
-                // filterByLocationAndService(location);
                 filterResourcesByService(resources, resourcesContainer);
             });
         }
@@ -130,8 +128,6 @@ function renderNortheast() {
                 app.innerHTML = FiltersApp();
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
-                const location = "northeast";
-                // filterByLocationAndService(location);
                 filterResourcesByService(resources, resourcesContainer);
             });
         }
@@ -145,8 +141,6 @@ function renderCentral() {
                 app.innerHTML = FiltersApp();
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
-                const location = "central";
-                // filterByLocationAndService(location);
                 filterResourcesByService(resources, resourcesContainer);
             });
         }
@@ -160,8 +154,6 @@ function renderSouthwest() {
                 app.innerHTML = FiltersApp();
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
-                const location = "southwest";
-                // filterByLocationAndService(location);
                 filterResourcesByService(resources, resourcesContainer);
             });
         }
@@ -175,8 +167,6 @@ function renderSoutheast() {
                 app.innerHTML = FiltersApp();
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
-                const location = "southeast";
-                // filterByLocationAndService(location);
                 filterResourcesByService(resources, resourcesContainer);
             });
         }
@@ -218,7 +208,6 @@ function renderGoods() {
                 const resourcesContainer = document.getElementById("resource-container");
                 resourcesContainer.innerHTML = OhioResources(resources);
                 filterResourcesByService(resources, resourcesContainer);
-                filterFood();
             });
         }
     });
@@ -411,160 +400,3 @@ function filterResourcesByService(resources, resourcesContainer) {
         filteredResources = [];
     })
 }
-
-// function filterByLocationAndService(location) {
-//     filterLocationByFood(location);
-//     filterLocationByGoods(location);
-//     filterLocationByHousing(location);
-//     filterLocationByTransit(location);
-//     filterLocationByCare(location);
-//     filterLocationByMoney(location);
-//     filterLocationByHealth(location);
-//     filterLocationByEducation(location);
-//     filterLocationByLegal(location);
-//     filterLocationByWork(location);
-// }
-
-
-
-// function filterLocationByFood(location) {
-//     const foodBtn = document.querySelector("input[name=filter-food-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-food-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/food`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByGoods(location) {
-//     const foodBtn = document.querySelector("input[name=filter-goods-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-goods-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/goods`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByHousing(location) {
-//     const foodBtn = document.querySelector("input[name=filter-housing-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-housing-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/housing`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByTransit(location) {
-//     const foodBtn = document.querySelector("input[name=filter-transit-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-transit-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/transit`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByCare(location) {
-//     const foodBtn = document.querySelector("input[name=filter-care-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-care-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/care`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByMoney(location) {
-//     const foodBtn = document.querySelector("input[name=filter-money-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-money-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/money`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByHealth(location) {
-//     const foodBtn = document.querySelector("input[name=filter-health-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-health-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/health`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByEducation(location) {
-//     const foodBtn = document.querySelector("input[name=filter-education-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-
-//         if (event.target.classList.contains("filter-education-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/education`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-// function filterLocationByLegal(location) {
-//     const foodBtn = document.querySelector("input[name=filter-legal-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-legal-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/legal`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
-
-
-// function filterLocationByWork(location) {
-//     const foodBtn = document.querySelector("input[name=filter-work-resources]");
-//     foodBtn.addEventListener("change", (event) => {
-
-//         if (event.target.classList.contains("filter-work-resources")) {
-//             apiHelpers.getRequest(`http://localhost:8080/resources/regions/${location}/services/work`, (resources) => {
-//                 const resourcesContainer = document.getElementById("resource-container");
-//                 resourcesContainer.innerHTML = OhioResources(resources);
-//                 filterByLocationAndService(location);
-//             });
-//         }
-//     })
-// }
