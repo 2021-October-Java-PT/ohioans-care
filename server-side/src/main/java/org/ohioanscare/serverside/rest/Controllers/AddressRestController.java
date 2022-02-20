@@ -22,8 +22,8 @@ public class AddressRestController {
         return (Collection<Address>) addressRepo.findAll();
     }
 
-    @GetMapping("/addresses/{cityName}")
-    public City getCityByName(@PathVariable String addresssNumber) {return addressRepo.findByAddressContainsIgnoreCase(addresssNumberName);
+    @GetMapping("/addresses/{addresssNumberName}")
+    public Address getCityByName(@PathVariable String addresssNumber) {return addressRepo.findByAddressContainsIgnoreCase(addresssNumberName);
     }
 
 }
