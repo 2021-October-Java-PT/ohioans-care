@@ -1,5 +1,5 @@
 export default function Services() {
-    return `
+  return `
     <div class="serv-main-cont">
   <div id="services" class="container-fluid services-pg text-center">
 <h2>CONTACT OHIOANS CARE</h2>
@@ -39,4 +39,4 @@ totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architec
 </div>
 </div>
     `;
-}    
+}
