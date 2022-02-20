@@ -66,7 +66,21 @@ export default function Home() {
           <img class="img-responsive btn legal-resources" src="${legalImg}" />
         </div>
       </div>
-    </div>
+      <div class="row home-com-btn">
+        <div class="col-sm-4">
+        <span class="glyphicon glyphicon-bullhorn logo-small"></span>
+        <h4><a href="https://community.ohioanscare.org/">LOCAL COMMUNITY UPDATES</a></h4>
+        </div>
+      <div class="col-sm-4">
+         <span class="glyphicon glyphicon-heart logo-small"></span>
+         <h4><a href="https://community.ohioanscare.org/">NEIGHBORHOOD CARE WATCH</a></h4>
+        </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-comment logo-small"></span>
+        <h4><a href="https://community.ohioanscare.org/public/tags">COMMUNITY FORUM</a></h4>
+      </div>
+      </div>
+      </div>
     </div>
     </div>
     `;
