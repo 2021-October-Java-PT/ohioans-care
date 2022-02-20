@@ -32,8 +32,13 @@ public class OhioResourceRestController {
 
 
     @GetMapping("/resources")
-    public Collection<OhioResource> getAllResource() {
+    public Collection<OhioResource> getAllResources() {
         return (Collection<OhioResource>) ohioResourceRepo.findAll();
+    }
+
+    @GetMapping("/resources/resource-by-location/{countyNameOrCityNameOrZipCodeNum}")
+    public Collection<OhioResource> getAllResourcesByCountyCityOrZipCode(@PathVariable(value = "countyNameOrCityNameOrZipCodeNum") String countyName, @PathVariable(value = "countyNameOrCityNameOrZipCodeNum") String cityName, @PathVariable(value = "countyNameOrCityNameOrZipCodeNum") String zipCodeNum) {
+        return ohioResourceRepo.findByAddress_County_CountyIgnoreCaseOrAddress_City_CityIgnoreCaseOrAddress_ZipCode_ZipCode(countyName, cityName, zipCodeNum);
     }
 
     @GetMapping("/resources/{id}")
