@@ -4,6 +4,7 @@ import Home from "./components/Home.js";
 import OhioResources from "./components/OhioResources.js"
 import Services from "./components/Services.js";
 import apiHelpers from "./api-helpers/apiHelpers.js";
+import UserProfile from "./Components/Profile.js";
 
 
 const app = document.querySelector("#app");
@@ -35,6 +36,7 @@ function buildPage() {
   renderEducation();
   renderWork();
   renderLegal();
+  userLogin();
 }
 
 function renderHome() {
@@ -66,6 +68,24 @@ function navAbout() {
     app.innerHTML = About();
   });
 }
+
+function userLogin(){
+  const userName = document.querySelector("#userName");
+  const userPassword = document.querySelector("#userPassword");
+  const userLoginBtn = document.querySelector("#loginBtn");
+
+  userLoginBtn.addEventListener("click", ()=>{
+    const userNameValue = userName.value;
+    console.log(userNameValue);
+    const userPasswordValue = userPassword.value;
+    console.log(userPasswordValue);
+    apiHelpers.getRequest(`http://localhost:8080/api/users/${userNameValue}`, (userProfile) =>{
+      console.log(userProfile)
+      app.innerHTML = UserProfile(userProfile);
+    })
+  });
+}
+
 
 function Search() {
   const app = document.querySelector("#app");

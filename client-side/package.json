@@ -19,8 +19,12 @@
     "parcel": "^2.2.1"
   },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.13.5",
+
+    
     "@googlemaps/markerclusterer": "^1.0.24",
+
+    "@googlemaps/js-api-loader": "^1.13.6",
+
     "youtube-video-js": "^3.5.0"
   }
 }
