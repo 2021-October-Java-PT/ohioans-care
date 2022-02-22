@@ -6,7 +6,7 @@ export default function Resources(resources) {
             <div class="container">
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
-                <iframe width="250" height="250" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwY5NtXrpNogRFtmfnDlkzeU&key=AIzaSyDrUTfivqK6E0je5MjI25olB7zrIaiSIqc"></iframe>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="250" height="250"></iframe>
                 <form>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="">Miles

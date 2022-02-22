@@ -5,7 +5,9 @@ import OhioResources from "./components/OhioResources.js"
 import Services from "./components/Services.js";
 import apiHelpers from "./api-helpers/apiHelpers.js";
 
+
 const app = document.querySelector("#app");
+
 
 buildPage();
 
