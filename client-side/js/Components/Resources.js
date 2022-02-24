@@ -4,17 +4,19 @@ export default function Resources(resources) {
     <div class="row pg-cont" style="background-color: #d0cfce;">
         <div class="col-sm-2 pg-wrap">
             <div class="container">
-                <h2>Filter Results By:</h2>
-                <div class="form-cont">
-                <form>
+                <h2>>Filter Results By:</h2>
+                <p>LOCATION:</p>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="250" height="250"></iframe>
+                <div class="sb-cont">
+                    <form>
                     <div class="input-group">
-                    <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your Zip Code, City, or County" required>
-                    <div class="input-group-btn">
+                        <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your City/Zip" required>
+                        <div class="input-group-btn">
                         <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
+                        </div>
                     </div>
-                    </div>
-                </form>
-                </div>
+                    </form>
+                </div><br>
                 <p>RESOURCE:</p>
                 <form>
                     <label class="checkbox-inline">

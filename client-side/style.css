@@ -54,7 +54,9 @@ h4 {
   margin-left: auto;
   margin-right: auto;
 }
-
+.sb-cont{
+  width: 25%;
+}
 .container-fluid {
   padding: 60px 50px;
 }

@@ -7,18 +7,17 @@ export default function Filters() {
             <div class="container">
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
-                <iframe width="250" height="250" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwY5NtXrpNogRFtmfnDlkzeU&key=AIzaSyDrUTfivqK6E0je5MjI25olB7zrIaiSIqc"></iframe>
-                <form>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="">Miles
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="">City
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="">Zip Code
-                    </label>
-                </form><br>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="250" height="250"></iframe>
+                <div class="sb-cont">
+                    <form>
+                    <div class="input-group">
+                        <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your City/Zip" required>
+                        <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
                 <p>RESOURCE:</p>
                 <form>
                     <label class="checkbox-inline">
