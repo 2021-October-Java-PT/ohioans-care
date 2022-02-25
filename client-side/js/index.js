@@ -7,6 +7,7 @@ import apiHelpers from "./api-helpers/apiHelpers.js";
 import UserProfile from "./Components/Profile.js";
 
 const app = document.querySelector("#app");
+let isLoggedIn = false;
 
 buildPage();
 
@@ -33,7 +34,8 @@ function buildPage() {
   renderEducation();
   renderWork();
   renderLegal();
-  userLogin();
+  !isLoggedIn && userLogin();
+  console.log(isLoggedIn);
 }
 
 function renderHome() {
@@ -79,6 +81,8 @@ function userLogin() {
       `http://localhost:8080/api/users/${userNameValue}`,
       (userProfile) => {
         console.log(userProfile);
+      
+        isLoggedIn = true;
         app.innerHTML = UserProfile(userProfile);
       }
     );
