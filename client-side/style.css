@@ -75,7 +75,7 @@ h4 {
 
 .navbar {
   margin-bottom: 0;
-  background-color: #db6077;
+  background-color: #ef3a5d;
   z-index: 9999;
   border: 0;
   font-size: 12px !important;
@@ -99,6 +99,9 @@ h4 {
 .navbar-default .navbar-toggle {
   border-color: transparent;
   color: #fff !important;
+}
+.navbar-brand{
+ position:absolute;
 }
 
 .serv-main-cont {
@@ -143,9 +146,9 @@ footer .glyphicon {
 }
 
 footer {
-  background-color: #db6077;
+  background-color: #36444e;
   margin: 0;
-  color: #fff;
+  color: #fff
 }
 
 /* MADISON'S STYLING START */
