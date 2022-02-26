@@ -1,5 +1,4 @@
 export default function UserProfile(userProfile) {
-  console.log(userProfile);
   return `
     <div>
     </br>
