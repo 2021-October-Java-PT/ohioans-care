@@ -1,5 +1,5 @@
-import agentPic from "../../assets/call-agent-pic.png";
 import BgPic from "../../assets/Serv-pg-bg.png";
+import agentPic from "../../assets/call-agent-pic.png";
 
 export default function Services() {
   return `
