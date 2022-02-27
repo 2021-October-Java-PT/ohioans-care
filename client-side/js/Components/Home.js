@@ -47,8 +47,6 @@ export default function Home() {
         <div class="col-xs-6 col-md-2">
           <img class="img-responsive btn health-resources" src="${healthImg}" />
         </div>
-      </div>
-      <div class="row">
         <div class="col-xs-6 col-md-2 col-md-offset-1">
           <img class="img-responsive btn money-resources" src="${moneyImg}" />
         </div>
