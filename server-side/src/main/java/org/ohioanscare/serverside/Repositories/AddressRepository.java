@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AddressRepository extends CrudRepository<Address, Long> {
     Address findByCityContains(String city);
+    Address findByCounty_CountyContainsIgnoreCase(String county);
 }
