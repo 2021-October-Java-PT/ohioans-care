@@ -6,6 +6,7 @@ import OhioResources from "./components/OhioResources.js";
 import Services from "./components/Services.js";
 import UserProfile from "./Components/Profile.js";
 import apiHelpers from "./api-helpers/apiHelpers.js";
+import Contact from "./components/Contact.js";
 
 const app = document.querySelector("#app");
 let isLoggedIn = false;
@@ -17,6 +18,7 @@ function buildPage() {
 
   navAbout();
   navServices();
+  navContact();
 
   renderNorthwest();
   renderNortheast();
@@ -51,6 +53,8 @@ function navHome() {
 
     Search();
     navAbout();
+    navContact();
+    navServices();
   });
 }
 
@@ -65,6 +69,13 @@ function navAbout() {
   const aboutElem = document.querySelector(".nav-about");
   aboutElem.addEventListener("click", () => {
     app.innerHTML = About();
+  });
+}
+
+function navContact() {
+  const aboutElem = document.querySelector(".nav-contact");
+  aboutElem.addEventListener("click", () => {
+    app.innerHTML = Contact();
   });
 }
 
