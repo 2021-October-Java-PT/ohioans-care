@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/index.js" type="module"></script>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -33,40 +34,43 @@
           <li> <a id="homeBtn">HOME</a></li>
           <li><a class="nav-services">SERVICES</a></li>
           <li><a class="nav-about">ABOUT US</a></li>
-          <li><a>CONTACT</a></li>  
-          <li><button onclick="document.getElementById('userId01').style.display='block'"
-            class="btn glyphicon glyphicon-user signIn" style="width:auto;"></button></li>
-  
-        <div id="userId01" class="modal modal-cont">
-  
-          <!-- <form class="modal-content animate" action="/action_page.php" method="post"> -->
-            <form class="modal-content animate" method="post"></form>
-            <div class="profilecontainer">
-              <span onclick="document.getElementById('userId01').style.display='none'" class="close"
-                title="Close Modal">&times;</span>
-              <img src="assets\profile.png" alt="Avatar" class="avatar" width="150" height="150">
-            </div>
-  
-            <div class="form-container">
-              <label for="uname"><b>Username</b></label>
-              <input id="userName" type="text" placeholder="Enter Username" name="uname" required>
-  
-              <label for="pwd"><b>Password</b></label>
-              <input id="userPassword" type="password" placeholder="Enter Password" name="pwd" required>
-  
-              <button id="loginBtn">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" onclick="document.getElementById('userId01').style.display='none'"
-                class="cancelbtn">Cancel</button>
-              <span class="pwd">Forgot <a href="#">password?</a></span>
-            </div>
-          </form>
-        </div>
-        </ul>  
+          <li><a>CONTACT</a></li>
+          <li>
+            <button id="profileBtn"
+              class="btn glyphicon glyphicon-user signIn" style="width:auto;">
+            </button>
+          </li>
+
+          <div id="userId01" class="modal modal-cont">
+
+            <!-- <form class="modal-content animate" action="/action_page.php" method="post"> -->
+              <form class="modal-content animate" method="post"></form>
+              <div class="profilecontainer">
+                <span onclick="document.getElementById('userId01').style.display='none'" class="close"
+                  title="Close Modal">&times;</span>
+                <img src="assets\profile.png" alt="Avatar" class="avatar" width="150" height="150">
+              </div>
+
+              <div class="form-container">
+                <label for="uname"><b>Username</b></label>
+                <input id="userName" type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="pwd"><b>Password</b></label>
+                <input id="userPassword" type="password" placeholder="Enter Password" name="pwd" required>
+
+                <button id="loginBtn">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('userId01').style.display='none'"
+                  class="cancelbtn">Cancel</button>
+                <span class="pwd">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+          </div>
+        </ul>
       </div>
     </div>
   </nav>
@@ -84,7 +88,7 @@
     <img src="./assets/ohCaresLogoFinal.png" alt="Logo" style="width:250px; height:100px; ">
     <p>www.ohioanscare.com</p>
   </footer>
-  <script src="./js/index.js" type="module"></script>
+  
   <script>
     var modal = document.getElementById('userId01');
 
