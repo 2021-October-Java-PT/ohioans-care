@@ -10,6 +10,11 @@ import Contact from "./components/Contact.js";
 
 const app = document.querySelector("#app");
 let isLoggedIn = false;
+let activeUserProfile = {
+  firstName: "",
+  zipCode: "",
+  resources: [],
+};
 
 buildPage();
 
@@ -37,8 +42,9 @@ function buildPage() {
   renderEducation();
   renderWork();
   renderLegal();
+
+  onProfileClick();
   !isLoggedIn && userLogin();
-  console.log(isLoggedIn);
 }
 
 function renderHome() {
@@ -72,30 +78,52 @@ function navAbout() {
   });
 }
 
+
 function navContact() {
   const aboutElem = document.querySelector(".nav-contact");
   aboutElem.addEventListener("click", () => {
     app.innerHTML = Contact();
+ });
+}
+
+function onProfileClick() {
+  const profileBtn = document.querySelector("#profileBtn");
+  profileBtn.addEventListener("click", () => {
+    if (isLoggedIn) {
+      app.innerHTML = UserProfile(activeUserProfile);
+    } else {
+      document.getElementById("userId01").style.display = "block";
+    }
   });
 }
 
 function userLogin() {
   const userName = document.querySelector("#userName");
-  const userPassword = document.querySelector("#userPassword");
   const userLoginBtn = document.querySelector("#loginBtn");
 
   userLoginBtn.addEventListener("click", () => {
     const userNameValue = userName.value;
-    console.log(userNameValue);
-    const userPasswordValue = userPassword.value;
-    console.log(userPasswordValue);
-    apiHelpers.getRequest(`http://localhost:8080/api/users/${userNameValue}`, (userProfile) => {
-      console.log(userProfile);
+    apiHelpers.getRequest(
+      `http://localhost:8080/api/users/${userNameValue}`,
+      (userProfile) => loggedInUser(userProfile)
+    );
+    console.log("does this hit line 87");
 
-      isLoggedIn = true;
-      app.innerHTML = UserProfile(userProfile);
-    });
   });
+}
+
+// this callback will hit if we get a successful response from
+// the server on log in
+function loggedInUser(userProfile) {
+  // set userLoggedIn = true
+  isLoggedIn = true;
+  activeUserProfile = userProfile;
+  console.log(isLoggedIn);
+  // close the modal
+  var modal = document.getElementById("userId01");
+  modal.style.display = "none";
+  //render the profile page
+  app.innerHTML = UserProfile(userProfile);
 }
 
 function Search() {
