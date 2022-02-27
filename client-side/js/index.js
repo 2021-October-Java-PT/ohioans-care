@@ -1,12 +1,12 @@
 import About from "./components/About.js";
 import AddResource from "./Components/AddResource.js";
+import Contact from "./components/Contact.js";
 import FiltersApp from "./components/FiltersApp.js";
 import Home from "./components/Home.js";
 import OhioResources from "./components/OhioResources.js";
 import Services from "./components/Services.js";
 import UserProfile from "./Components/Profile.js";
 import apiHelpers from "./api-helpers/apiHelpers.js";
-import Contact from "./components/Contact.js";
 
 const app = document.querySelector("#app");
 let isLoggedIn = false;
