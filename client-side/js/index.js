@@ -1,4 +1,5 @@
 import About from "./components/About.js";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 import AddResource from "./Components/AddResource.js";
 import Contact from "./components/Contact.js";
 import FiltersApp from "./components/FiltersApp.js";
@@ -24,6 +25,7 @@ function buildPage() {
   navAbout();
   navServices();
   navContact();
+  
 
   renderNorthwest();
   renderNortheast();
@@ -76,6 +78,13 @@ function navAbout() {
   const aboutElem = document.querySelector(".nav-about");
   aboutElem.addEventListener("click", () => {
     app.innerHTML = About();
+  });
+}
+
+function footerPolicy() {
+  const aboutElem = document.querySelector("privacy-policy");
+  aboutElem.addEventListener("click", () => {
+    app.innerHTML = Privacy();
   });
 }
 

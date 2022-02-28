@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6 col-md-2 col-md-offset-1">
+        <div class="col-xs-6 col-md-2">
           <img class="img-responsive btn food-resources" src="${foodImg}" id="" />
         </div>
         <div class="col-xs-6 col-md-2">

@@ -147,6 +147,7 @@ footer .glyphicon {
 }
 
 footer {
+  bottom: 0;
   background-color: #ef3a5d;
   margin: 0;
   color: #fff
