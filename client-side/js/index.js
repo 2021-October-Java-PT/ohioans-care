@@ -1,10 +1,10 @@
 import About from "./components/About.js";
-import PrivacyPolicy from "./components/PrivacyPolicy";
 import AddResource from "./Components/AddResource.js";
 import Contact from "./components/Contact.js";
 import FiltersApp from "./components/FiltersApp.js";
 import Home from "./components/Home.js";
 import OhioResources from "./components/OhioResources.js";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 import Services from "./components/Services.js";
 import UserProfile from "./Components/Profile.js";
 import apiHelpers from "./api-helpers/apiHelpers.js";
@@ -45,9 +45,11 @@ function buildPage() {
   renderWork();
   renderLegal();
 
-  onProfileClick();
+  navProfileLoginMenu();
   !isLoggedIn && userLogin();
   // resourceForm();
+
+  navPrivacyPolicy();
 }
 
 function renderHome() {
@@ -61,9 +63,6 @@ function navHome() {
     app.innerHTML = Home();
 
     Search();
-    navAbout();
-    navContact();
-    navServices();
   });
 }
 
@@ -81,10 +80,11 @@ function navAbout() {
   });
 }
 
-function footerPolicy() {
-  const aboutElem = document.querySelector("privacy-policy");
+function navPrivacyPolicy() {
+  const aboutElem = document.querySelector(".privacy-policy");
+  
   aboutElem.addEventListener("click", () => {
-    app.innerHTML = Privacy();
+    app.innerHTML = PrivacyPolicy();
   });
 }
 
@@ -105,8 +105,9 @@ function resourceForm() {
   });
 }
 
-function onProfileClick() {
+function navProfileLoginMenu() {
   const profileBtn = document.querySelector("#profileBtn");
+  
   profileBtn.addEventListener("click", () => {
     if (isLoggedIn) {
       app.innerHTML = UserProfile(activeUserProfile);
@@ -124,15 +125,15 @@ function userLogin() {
     const userNameValue = userName.value;
     apiHelpers.getRequest(
       `http://localhost:8080/api/users/${userNameValue}`,
-      (userProfile) => loggedInUser(userProfile)
+      (userProfile) => checkIfUserLoggedIn(userProfile)
     );
-    console.log("does this hit line 87");
+    // console.log("does this hit line 87");
   });
 }
 
 // this callback will hit if we get a successful response from
 // the server on log in
-function loggedInUser(userProfile) {
+function checkIfUserLoggedIn(userProfile) {
   // set userLoggedIn = true
   isLoggedIn = true;
   activeUserProfile = userProfile;
