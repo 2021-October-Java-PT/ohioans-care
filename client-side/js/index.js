@@ -25,6 +25,7 @@ function buildPage() {
   navAbout();
   navServices();
   navContact();
+  navPrivacyPolicy();
   
 
   renderNorthwest();
@@ -47,9 +48,6 @@ function buildPage() {
 
   navProfileLoginMenu();
   !isLoggedIn && userLogin();
-  // resourceForm();
-
-  navPrivacyPolicy();
 }
 
 function renderHome() {
@@ -67,21 +65,33 @@ function navHome() {
 }
 
 function navServices() {
-  const aboutElem = document.querySelector(".nav-services");
-  aboutElem.addEventListener("click", () => {
+  const servicesHeaderElem = document.querySelector(".nav-services");
+  const servicesFooterElem = document.querySelector(".services-footer-link")
+  
+  servicesHeaderElem.addEventListener("click", () => {
+    app.innerHTML = Services();
+  });
+  
+  servicesFooterElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
 }
 
 function navAbout() {
-  const aboutElem = document.querySelector(".nav-about");
-  aboutElem.addEventListener("click", () => {
-    app.innerHTML = About();
-  });
+  const aboutHeaderElem = document.querySelector(".nav-about");
+  const aboutFooterElem = document.querySelector(".about-footer-link")
+  
+    aboutHeaderElem.addEventListener("click", () => {
+      app.innerHTML = About();
+    });
+  
+    aboutFooterElem.addEventListener("click", () => {
+      app.innerHTML = About();
+    });  
 }
 
 function navPrivacyPolicy() {
-  const aboutElem = document.querySelector(".privacy-policy");
+  const aboutElem = document.querySelector(".privacy-policy-footer-link");
   
   aboutElem.addEventListener("click", () => {
     app.innerHTML = PrivacyPolicy();
@@ -89,15 +99,21 @@ function navPrivacyPolicy() {
 }
 
 function navContact() {
-  const aboutElem = document.querySelector(".nav-contact");
+  const contactHeaderElem = document.querySelector(".nav-contact");
+  const contactFooterElem = document.querySelector(".contact-footer-elem");
 
-  aboutElem.addEventListener("click", () => {
+  contactHeaderElem.addEventListener("click", () => {
     app.innerHTML = Contact();
-    resourceForm();
+    navResourceForm();
+  });
+
+    contactFooterElem.addEventListener("click", () => {
+    app.innerHTML = Contact();
+    navResourceForm();
   });
 }
 
-function resourceForm() {
+function navResourceForm() {
   const resourceBtn = document.querySelector(".btn-danger");
   resourceBtn.addEventListener("click", () => {
     console.log("formBtn");
