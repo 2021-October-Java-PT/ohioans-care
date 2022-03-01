@@ -3,11 +3,11 @@ import Resources from "./Resources.js";
 export default function Filters() {
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
-        <div class="col-sm-2 pg-wrap">
-            <div class="container">
+        <div class="col-sm-4 pg-wrap">
+            <div class="container-fluid">
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="250" height="250"></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="350" height="350"></iframe>
                 <form>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="">Miles
@@ -56,7 +56,7 @@ export default function Filters() {
             </div>
         </div>
         
-        <div class="col-sm-10" style="background-color:#f7f8f8;">
+        <div class="col-sm-8" style="background-color:#f7f8f8;">
             <div class="resource-container" id="resource-container">
             </div>
         </div>
