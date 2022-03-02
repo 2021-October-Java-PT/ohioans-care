@@ -10,8 +10,8 @@ export default function Services() {
     <div class="col-sm-5">
       <img src="${agentPic}" width="200"><br>
       <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-phone"></span> (330) 123-4567</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> contact@ohioancares.org</p><br>
+      <p><span class="glyphicon glyphicon-phone"></span> <a href="tel:4197071234" style="color: #818181">(419) 707-1234</a></p>
+      <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:contact@ohioancares.org" style="color: #818181">contact@ohioancares.org</a></p><br>
       <p>HAVE SUGGESTIONS?</p>
       <a href="#" class="btn btn-danger" role="button">SUGGEST A RESOURCE</a>
     </div>

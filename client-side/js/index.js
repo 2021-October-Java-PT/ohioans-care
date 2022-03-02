@@ -26,7 +26,6 @@ function buildPage() {
   navServices();
   navContact();
   navPrivacyPolicy();
-  
 
   renderNorthwest();
   renderNortheast();
