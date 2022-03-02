@@ -189,12 +189,12 @@ ul {
   margin: 10px auto;
 }
 
-.resource-box {
+/* .resource-box {
   border: 1px solid black;
   width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
+} */
 
 .resource-grid {
   display: grid;
@@ -788,6 +788,9 @@ ul {
   border: 1px solid #ef3a5d; 
   border-radius:0 !important;
   transition: box-shadow 0.5s;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .panel:hover {
   box-shadow: 5px 0px 40px rgba(0,0,0, .2);

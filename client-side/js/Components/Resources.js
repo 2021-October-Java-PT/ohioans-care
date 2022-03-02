@@ -64,7 +64,7 @@ export default function Resources(resources) {
                         <input type="hidden" id="programmingLanguageId" value="${resource.id}">
                     </span><br>
                     <span id="org-name-header">Provided By: ${resource.organizationName}</span>
-                
+            <div class="panel-body>    
                 <div class="rsrc">
                     <div class="resource-summary">
                         <ul>
@@ -103,6 +103,7 @@ export default function Resources(resources) {
                     </div>
                           </div>
                 </div>
+            </div>    
             </div>
         </div>
         `;
