@@ -1,5 +1,5 @@
 export default function AddResource() {
-  return `
+	return `
   <div class="add-rsrc-cont">
 	<div class="card">
   <br>

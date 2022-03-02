@@ -155,8 +155,9 @@ footer {
   margin: 0;
   color: #fff
 }
+
 /* resource sidebar */
-.pg-cont{
+.pg-cont {
   position: sticky;
 }
 
@@ -171,6 +172,9 @@ ul {
   font-size: xx-large;
   text-align: center;
   display: inline-block;
+  /* padding: 0 0;
+  margin:  0 0;
+  overflow-wrap: normal; */
 }
 
 #org-name-header {
@@ -186,14 +190,22 @@ ul {
 }
 
 .resource-wrapper {
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 .resource-box {
-  border: 1px solid black;
-  width: 800px;
+  border: 1px solid #A9A9A9;
+  width: 850px;
   margin: 0 auto;
   padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 8px;
+  background-color: #EFEFEF;
+}
+
+.resource-box:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .resource-grid {
@@ -203,18 +215,25 @@ ul {
     "resource-header resource-header"
     "resource-summary resource-hours-website"
     "resource-summary resource-address";
-  column-gap: 20px;
+  column-gap: 50px;
 }
 
 .resource-header {
   grid-area: "resource-header";
   display: inline-block;
   text-align: center;
-  width: 800px;
+  /* inline-size: 800px;
+  word-break: break-all;
+  padding: 0;
+  margin: 0 0 8px 0; */
 }
 
 .resource-summary {
   grid-area: "resource-summary";
+}
+
+#resource-description {
+  text-align: justify;
 }
 
 .resource-hours-website {
@@ -242,6 +261,16 @@ ul {
 
 #ohioans-care-logo {
   max-width: 200px;
+}
+
+#google-map {
+  width: 100%;
+  height: 500px;
+}
+
+#filter-btn {
+  margin: 8px 0 0 0;
+  width: 100%;
 }
 
 /* MADISON'S STYLING END */
@@ -682,103 +711,105 @@ span.pwd {
 }
 
 ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
 }
 
 /* add resource page */
-.add-rsrc-cont{
+.add-rsrc-cont {
   background-image: url('assets\suggest-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: -20px;
 }
+
 .add-rsrc {
   appearance: none;
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .card {
-	margin: 2rem auto;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 425px;
-	background-color: #f1eeee;
-	border-radius: 10px;
-	box-shadow: 0 10px 20px 0 rgba(#999, .25);
-	padding: .75rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 425px;
+  background-color: #f1eeee;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 0 rgba(#999, .25);
+  padding: .75rem;
 }
 
 .card-image {
-	border-radius: 8px;
-	overflow: hidden;
-	padding-bottom: 65%;
-	background-image: url('assets\suggestion.png');
-	background-repeat: no-repeat;
-	background-size: 150%;
-	background-position: 0 5%;
-	position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 65%;
+  background-image: url('assets\suggestion.png');
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: 0 5%;
+  position: relative;
 }
 
 .card-heading {
-	position: absolute;
-	left: 10%;
-	top: 15%;
-	right: 10%;
-	font-size: 1.75rem;
-	font-weight: 700;
-	color: #36444e;
-	line-height: 1.222;
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  right: 10%;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #36444e;
+  line-height: 1.222;
 }
 
 .card-form {
-	padding: 2rem 1rem 0;
+  padding: 2rem 1rem 0;
 }
+
 .input {
-	display: flex;
-	flex-direction: column-reverse;
-	position: relative;
-	padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 1.5rem;
 }
 
 .input-label {
-	color: #8597a3;
-	position: absolute;
-	top: 1.5rem;
-	transition: .25s ease;
+  color: #8597a3;
+  position: absolute;
+  top: 1.5rem;
+  transition: .25s ease;
 }
 
 .input-field {
-	border: 0;
-	z-index: 1;
-	background-color: transparent;
-	border-bottom: 2px solid #eee; 
-	font: inherit;
-	font-size: 1.125rem;
-	padding: .25rem 0;
+  border: 0;
+  z-index: 1;
+  background-color: transparent;
+  border-bottom: 2px solid #eee;
+  font: inherit;
+  font-size: 1.125rem;
+  padding: .25rem 0;
 }
 
 .action {
-	margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .action-button {
-	font: inherit;
-	font-size: 1.25rem;
-	padding: 1em;
-	width: 100%;
-	font-weight: 500;
-	background-color: #ef3a5d;
-	border-radius: 6px;
-	color: #FFF;
-	border: 0;
+  font: inherit;
+  font-size: 1.25rem;
+  padding: 1em;
+  width: 100%;
+  font-weight: 500;
+  background-color: #ef3a5d;
+  border-radius: 6px;
+  color: #FFF;
+  border: 0;
 }
 
 .card-info {
-	padding: 1rem 1rem;
-	text-align: center;
-	font-size: .875rem;
-	color: #8597a3;
+  padding: 1rem 1rem;
+  text-align: center;
+  font-size: .875rem;
+  color: #8597a3;
 }

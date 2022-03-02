@@ -7,15 +7,13 @@ export default function OhioResources(resources) {
         <div class="resource-wrapper ${resource.services.map(services => { return `${services.service.toLocaleLowerCase()}-service `;}).join("")}">
             <div class="resource-box" id="labels">
                 <div class="resource-header">
-                    <span id="program-name-header">${resource.entityName}
-                        <input type="hidden" id="programmingLanguageId" value="${resource.id}">
-                    </span><br>
-                    <span id="org-name-header">Provided By: ${resource.organizationName}</span>
+                    <h5 id="program-name-header">${resource.entityName}</h5><br>
+                    <h5 id="org-name-header">Provided By: ${resource.organizationName}</h5>
                 </div>
                 <div class="resource-grid">
                     <div class="resource-summary">
                         <ul>
-                            <li>${resource.description}</li><br><br>
+                            <li id="resource-description">${resource.description}</li><br><br>
                             <li>Serving: ${resource.serving}</li>
                             <li>Services: 
                                 ${resource.services.map(services => {    

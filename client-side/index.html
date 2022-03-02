@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/style.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,7 +27,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#myPage"><img id="ohioans-care-logo" src="assets\nav-logo3.png"></a>
+        <a class="navbar-brand">
+          <!-- <img src="assets\nav-logo3.png" width:"180" height="40" margin-top="50%" margin-bottom="50%"></a> -->
+        <!-- Possible styling? Madison left this here for Jo to test and there's a style in the CSS file that goes with it. Would go in place of the img tag above -->
+        <img id="ohioans-care-logo" src="assets\nav-logo3.png"></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -36,30 +39,29 @@
           <li><a class="nav-about">ABOUT US</a></li>
           <li><a class="nav-contact">CONTACT</a></li>
           <li>
-            <button id="profileBtn"
-              class="btn glyphicon glyphicon-user signIn" style="width:auto;">
+            <button id="profileBtn" class="btn glyphicon glyphicon-user signIn" style="width:auto;">
             </button>
-          </li>  
+          </li>
           <!-- <li><button onclick="document.getElementById('userId01').style.display='block'"
             class="btn glyphicon glyphicon-user signIn" style="width:auto;"></button></li> -->
-  
-        <div id="userId01" class="modal modal-cont">
-  
-          <!-- <form class="modal-content animate" action="/action_page.php" method="post"> -->
+
+          <div id="userId01" class="modal modal-cont">
+
+            <!-- <form class="modal-content animate" action="/action_page.php" method="post"> -->
             <form class="modal-content animate" method="post"></form>
             <div class="profilecontainer">
               <span onclick="document.getElementById('userId01').style.display='none'" class="close"
                 title="Close Modal">&times;</span>
               <img src="assets\profile.png" alt="Avatar" class="avatar" width="150" height="150">
             </div>
-  
+
             <div class="form-container">
               <label for="uname"><b>Username</b></label>
               <input id="userName" type="text" placeholder="Enter Username" name="uname" required>
-  
+
               <label for="pwd"><b>Password</b></label>
               <input id="userPassword" type="password" placeholder="Enter Password" name="pwd" required>
-  
+
               <button id="loginBtn">Login</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -70,43 +72,51 @@
                 class="cancelbtn">Cancel</button>
               <span class="pwd">Forgot <a href="#">password?</a></span>
             </div>
-          </form>
-        </div>
-        </ul>  
+            </form>
+          </div>
+        </ul>
       </div>
     </div>
   </nav>
 
-    <div id="app">
+  <div id="app">
+  </div>
+
+
+  <footer class="container-fluid text-center">
+    <div class="row">
+      <div class="col-sm-4">
+        <a class="about-footer-link">
+          <h4 style="color: #fff; text-align: center;">ABOUT US</h4>
+        </a>
+        <a class="services-footer-link">
+          <h4 style="color: #fff; text-align: center;">SERVICES</h4>
+        </a>
+        <a class="contact-footer-elem">
+          <h4 style="color: #fff; text-align: center;">CONTACT US</h4>
+        </a>
+        <a class="privacy-policy-footer-link">
+          <h4 style="color: #fff; text-align: center">PRIVACY POLICY</h4>
+        </a>
+      </div>
+      <div class="col-sm-4 top-btn">
+        <a href="#myPage" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br>
+        <img src="./assets/ohCaresLogoFinal.png" alt="Logo" style="width:250px; height:100px; ">
+        <br>
+        <br>
+        <p>www.ohioanscare.com</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-envelope"></span>
+        <br>
+        <p>contact@ohioanscare.org</p>
+        <br>
+        <span class="glyphicon glyphicon-earphone"></span>
+        <p>(419)707-1234</p>
+      </div>
     </div>
-    
-  
-    <footer class="container-fluid text-center">
-      <div class="row">
-        <div class="col-sm-4">
-          <a class="about-footer-link"><h4 style="color: #fff; text-align: center;">ABOUT US</h4></a>
-          <a class="services-footer-link"><h4 style="color: #fff; text-align: center;">SERVICES</h4></a>
-          <a class="contact-footer-elem"><h4 style="color: #fff; text-align: center;" >CONTACT US</h4></a>
-          <a class="privacy-policy-footer-link"><h4 style="color: #fff; text-align: center">PRIVACY POLICY</h4></a>
-        </div>
-        <div class="col-sm-4 top-btn">
-            <a href="#myPage" title="To Top">
-              <span class="glyphicon glyphicon-chevron-up"></span>
-            </a><br>
-          <img src="./assets/ohCaresLogoFinal.png" alt="Logo" style="width:250px; height:100px; ">
-          <br>
-          <br>
-          <p>www.ohioanscare.com</p>
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-envelope"></span>
-          <br>
-          <p>contact@ohioanscare.org</p>
-          <br>
-          <span class="glyphicon glyphicon-earphone"></span>
-          <p>(419)707-1234</p>
-        </div>
-      </div>  
   </footer>
 
   <script>

@@ -7,7 +7,8 @@ export default function Filters() {
             <div class="container-fluid">
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="470" height="350"></iframe>
+                <iframe id="google-map" src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F"></iframe>
+                <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="470" height="350"></iframe> -->
                 <form>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="">Miles
@@ -52,7 +53,7 @@ export default function Filters() {
                         <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="work" name="filter-work-resources">Work
                     </label><br>
                     </form>
-                    <button id="filter-btn">Filter</button>
+                    <button class="btn btn-danger" id="filter-btn">Filter</button>
             </div>
         </div>
         

@@ -26,7 +26,7 @@ function buildPage() {
   navServices();
   navContact();
   navPrivacyPolicy();
-  
+
 
   renderNorthwest();
   renderNortheast();
@@ -57,7 +57,15 @@ function renderHome() {
 
 function navHome() {
   const homeBtn = document.querySelector("#homeBtn");
+  const ohioansCareLogo = document.querySelector(".navbar-brand")
+
   homeBtn.addEventListener("click", () => {
+    app.innerHTML = Home();
+
+    Search();
+  });
+  
+  ohioansCareLogo.addEventListener("click", () => {
     app.innerHTML = Home();
 
     Search();
@@ -67,11 +75,11 @@ function navHome() {
 function navServices() {
   const servicesHeaderElem = document.querySelector(".nav-services");
   const servicesFooterElem = document.querySelector(".services-footer-link")
-  
+
   servicesHeaderElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
-  
+
   servicesFooterElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
@@ -80,19 +88,19 @@ function navServices() {
 function navAbout() {
   const aboutHeaderElem = document.querySelector(".nav-about");
   const aboutFooterElem = document.querySelector(".about-footer-link")
-  
-    aboutHeaderElem.addEventListener("click", () => {
-      app.innerHTML = About();
-    });
-  
-    aboutFooterElem.addEventListener("click", () => {
-      app.innerHTML = About();
-    });  
+
+  aboutHeaderElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
+
+  aboutFooterElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
 }
 
 function navPrivacyPolicy() {
   const aboutElem = document.querySelector(".privacy-policy-footer-link");
-  
+
   aboutElem.addEventListener("click", () => {
     app.innerHTML = PrivacyPolicy();
   });
@@ -107,7 +115,7 @@ function navContact() {
     navResourceForm();
   });
 
-    contactFooterElem.addEventListener("click", () => {
+  contactFooterElem.addEventListener("click", () => {
     app.innerHTML = Contact();
     navResourceForm();
   });
@@ -123,7 +131,7 @@ function navResourceForm() {
 
 function navProfileLoginMenu() {
   const profileBtn = document.querySelector("#profileBtn");
-  
+
   profileBtn.addEventListener("click", () => {
     if (isLoggedIn) {
       app.innerHTML = UserProfile(activeUserProfile);
