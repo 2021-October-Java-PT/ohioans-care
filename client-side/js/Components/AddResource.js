@@ -1,4 +1,4 @@
-export default function AddResource(newResource) {
+export default function AddResource() {
   return `
   <div class="add-rsrc-cont">
 	<div class="card">
