@@ -23,7 +23,8 @@ public class Service {
         this.service = service;
     }
 
-    public Service() {}
+    public Service() {
+    }
 
 
     public Long getId() {

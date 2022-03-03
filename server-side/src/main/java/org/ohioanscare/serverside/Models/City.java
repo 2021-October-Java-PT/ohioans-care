@@ -20,7 +20,8 @@ public class City {
         this.city = city;
     }
 
-    public City() {}
+    public City() {
+    }
 
 
     public Long getId() {

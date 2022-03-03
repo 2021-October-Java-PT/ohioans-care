@@ -27,7 +27,7 @@ public class UserController {
 
 
     @GetMapping("/api/users/{userName}")
-    public Optional<User> getUser(@PathVariable String userName){
+    public Optional<User> getUser(@PathVariable String userName) {
         return userRepo.findByUserName(userName);
     }
 

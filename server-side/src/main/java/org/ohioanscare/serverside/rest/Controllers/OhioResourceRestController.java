@@ -83,7 +83,7 @@ public class OhioResourceRestController {
 
     //ALL RESOURCES IN A SPECIFIC REGION OF A SPECIFIC SERVICE TYPE
     @GetMapping("/resources/regions/{regionName}/services/{serviceType}")
-    public Collection<OhioResource> getAllResourcesByRegionAndService(@PathVariable(value = "regionName") String regionName, @PathVariable (value = "serviceType") String serviceType) {
+    public Collection<OhioResource> getAllResourcesByRegionAndService(@PathVariable(value = "regionName") String regionName, @PathVariable(value = "serviceType") String serviceType) {
         Region region = regionRepo.findByRegionIgnoreCase(regionName);
         Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
         return ohioResourceRepo.findByAddress_RegionAndServicesContains(region, service);
@@ -91,7 +91,7 @@ public class OhioResourceRestController {
 
     //ALL RESOURCES IN A SPECIFIC COUNTY OF A SPECIFIC SERVICE TYPE
     @GetMapping("/resources/counties/{countyName}/services/{serviceType}")
-    public Collection<OhioResource> getAllResourcesByCountyAndService(@PathVariable(value = "countyName") String countyName, @PathVariable (value = "serviceType") String serviceType) {
+    public Collection<OhioResource> getAllResourcesByCountyAndService(@PathVariable(value = "countyName") String countyName, @PathVariable(value = "serviceType") String serviceType) {
         County county = countyRepo.findByCountyContainsIgnoreCase(countyName);
         Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
         return ohioResourceRepo.findByAddress_CountyAndServicesContains(county, service);
@@ -99,7 +99,7 @@ public class OhioResourceRestController {
 
     //ALL RESOURCES IN A SPECIFIC CITY OF A SPECIFIC SERVICE TYPE
     @GetMapping("/resources/cities/{cityName}/services/{serviceType}")
-    public Collection<OhioResource> getAllResourcesByCityAndService(@PathVariable(value = "cityName") String cityName, @PathVariable (value = "serviceType") String serviceType) {
+    public Collection<OhioResource> getAllResourcesByCityAndService(@PathVariable(value = "cityName") String cityName, @PathVariable(value = "serviceType") String serviceType) {
         City city = cityRepo.findByCityContainsIgnoreCase(cityName);
         Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
         return ohioResourceRepo.findByAddress_CityAndServicesContains(city, service);
@@ -107,7 +107,7 @@ public class OhioResourceRestController {
 
     //ALL RESOURCES IN A SPECIFIC ZIP CODE OF A SPECIFIC SERVICE TYPE
     @GetMapping("/resources/zip-codes/{zipCodeNum}/services/{serviceType}")
-    public Collection<OhioResource> getAllResourcesByZipCodeAndService(@PathVariable(value = "zipCodeNum") String zipCodeNum, @PathVariable (value = "serviceType") String serviceType) {
+    public Collection<OhioResource> getAllResourcesByZipCodeAndService(@PathVariable(value = "zipCodeNum") String zipCodeNum, @PathVariable(value = "serviceType") String serviceType) {
         ZipCode zipCode = zipCodeRepo.findByZipCodeContains(zipCodeNum);
         Service service = serviceRepo.findByServiceIgnoreCase(serviceType);
         return ohioResourceRepo.findByAddress_ZipCodeAndServicesContains(zipCode, service);
