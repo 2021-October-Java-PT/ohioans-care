@@ -14,12 +14,13 @@ export default function Home() {
   return `
         <div id="app">
         <div class="jumbotron text-center" style="background-image: url(${jumbotronImg});">
-        <div class="jumbotrn-cont">
+        <div class="jumbotrn-cont col-50">
           <h1>WE ARE HERE TO HELP</h1>
         <div class="search-section">
         <p>OHIO REGIONS</p>
         <h3><a class="region-nw" style="color: white">Northwest</a> | <a class="region-ne" style="color: white">Northeast</a> | <a class="region-c" style="color: white">Central</a> | <a class="region-sw" style="color: white">Southwest</a> | <a class="region-se" style="color: white">Southeast</a></h3>
-        <div class="form-cont">
+        <br>
+        <div class="form-cont col-25">
           <form>
             <div class="input-group">
               <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your Zip Code, City, or County" required>
@@ -71,7 +72,7 @@ export default function Home() {
         </div>
       <div class="col-sm-4">
          <span class="glyphicon glyphicon-heart logo-small"></span>
-         <h4><a href="https://community.ohioanscare.org/public/all">NEIGHBORHOOD CARE WATCH</a></h4>
+         <h4><a href="https://community.ohioanscare.org/public/t/neighbor-volunteering">NEIGHBORHOOD CARE WATCH</a></h4>
         </div>
       <div class="col-sm-4">
         <span class="glyphicon glyphicon-comment logo-small"></span>
