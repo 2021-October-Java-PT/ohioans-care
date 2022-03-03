@@ -66,11 +66,11 @@ function navHome() {
 function navServices() {
   const servicesHeaderElem = document.querySelector(".nav-services");
   const servicesFooterElem = document.querySelector(".services-footer-link")
-  
+
   servicesHeaderElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
-  
+
   servicesFooterElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
@@ -79,19 +79,19 @@ function navServices() {
 function navAbout() {
   const aboutHeaderElem = document.querySelector(".nav-about");
   const aboutFooterElem = document.querySelector(".about-footer-link")
-  
-    aboutHeaderElem.addEventListener("click", () => {
-      app.innerHTML = About();
-    });
-  
-    aboutFooterElem.addEventListener("click", () => {
-      app.innerHTML = About();
-    });  
+
+  aboutHeaderElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
+
+  aboutFooterElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
 }
 
 function navPrivacyPolicy() {
   const aboutElem = document.querySelector(".privacy-policy-footer-link");
-  
+
   aboutElem.addEventListener("click", () => {
     app.innerHTML = PrivacyPolicy();
   });
@@ -106,7 +106,7 @@ function navContact() {
     navResourceForm();
   });
 
-    contactFooterElem.addEventListener("click", () => {
+  contactFooterElem.addEventListener("click", () => {
     app.innerHTML = Contact();
     navResourceForm();
   });
@@ -122,7 +122,7 @@ function navResourceForm() {
 
 function navProfileLoginMenu() {
   const profileBtn = document.querySelector("#profileBtn");
-  
+
   profileBtn.addEventListener("click", () => {
     if (isLoggedIn) {
       app.innerHTML = UserProfile(activeUserProfile);
@@ -215,6 +215,58 @@ function Search() {
   );
 }
 
+function FilterSearch() {
+  const searchBar = document.getElementById("search-bar");
+  const searchSubmitBtn = document.getElementById("search-submit-btn");
+
+  searchSubmitBtn.addEventListener("click", () => {
+    const searchString = searchBar.value;
+    console.log(searchString);
+    apiHelpers.getRequest(
+      `http://localhost:8080/resources/resource-by-location/${searchString}`,
+      (resources) => {
+        console.log(resources);
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+      }
+    );
+  });
+
+  window.addEventListener(
+    "keydown",
+    function (event) {
+      if (event.defaultPrevented) {
+        return;
+      }
+
+      switch (event.key) {
+        case "Enter":
+          const searchString = searchBar.value;
+          console.log(searchString);
+          apiHelpers.getRequest(
+            `http://localhost:8080/resources/resource-by-location/${searchString}`,
+            (resources) => {
+              console.log(resources);
+              app.innerHTML = FiltersApp();
+              const resourcesContainer =
+                document.getElementById("resource-container");
+              resourcesContainer.innerHTML = OhioResources(resources);
+              filterResourcesByService(resources, resourcesContainer);
+            }
+          );
+          break;
+
+        default:
+          return;
+      }
+
+      event.preventDefault();
+    },
+    true
+  );
+}
+
 function renderNorthwest() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-nw")) {
@@ -222,10 +274,10 @@ function renderNorthwest() {
         "http://localhost:8080/resources/regions/northwest",
         (resources) => {
           app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
+          const resourcesContainer = document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -243,6 +295,7 @@ function renderNortheast() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -260,6 +313,7 @@ function renderCentral() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -277,6 +331,7 @@ function renderSouthwest() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -294,6 +349,7 @@ function renderSoutheast() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -311,6 +367,7 @@ function renderFood() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -328,6 +385,7 @@ function renderHousing() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -345,6 +403,7 @@ function renderGoods() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -362,6 +421,7 @@ function renderTransit() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -379,6 +439,7 @@ function renderHealth() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -396,6 +457,7 @@ function renderMoney() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -413,6 +475,7 @@ function renderCare() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -430,6 +493,7 @@ function renderEducation() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -447,6 +511,7 @@ function renderWork() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }
@@ -464,6 +529,7 @@ function renderLegal() {
             document.getElementById("resource-container");
           resourcesContainer.innerHTML = OhioResources(resources);
           filterResourcesByService(resources, resourcesContainer);
+          FilterSearch();
         }
       );
     }

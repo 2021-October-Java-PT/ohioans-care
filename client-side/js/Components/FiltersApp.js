@@ -1,6 +1,3 @@
-import Resources from "./Resources.js";
-
-
 export default function Filters() {
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
@@ -14,12 +11,12 @@ export default function Filters() {
                 <br>
                 
                 <form>
-                <div class="input-group">
-                  <input type="search" id="search-bar" class="form-control" size="80" placeholder="Enter Your Zip Code, City, or County" required>
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
-                  </div>
-                </div>
+                    <div class="input-group">
+                        <input type="search" id="search-bar" class="form-control" size="80" placeholder="Enter Your Zip Code, City, or County" required>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
+                        </div>
+                    </div>
                 </form>
                 
                 <br>
