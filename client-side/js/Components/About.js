@@ -4,10 +4,11 @@ import TJ from "../../assets/TJ.png";
 import Aaron from "../../assets/Aaron.png";
 import George from "../../assets/George.png";
 import Brady from "../../assets/Brady.png";
+import BGPic from "../../assets/Serv-pg-bg.png";
 
 export default function About() {
   return `
-    <div class="serv-main-cont">
+    <div class="serv-main-cont" style="background-image: url(${BGPic});">
   <div id="services" class="container-fluid services-pg text-center">
 <h2>ABOUT OHIOANS CARE</h2>
 <h4>OUR STORY</h4>
