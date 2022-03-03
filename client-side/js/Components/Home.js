@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       <div class="col-sm-4">
          <span class="glyphicon glyphicon-heart logo-small"></span>
-         <h4><a href="https://community.ohioanscare.org/public/all">NEIGHBORHOOD CARE WATCH</a></h4>
+         <h4><a href="https://community.ohioanscare.org/public/t/neighbor-volunteering">NEIGHBORHOOD CARE WATCH</a></h4>
         </div>
       <div class="col-sm-4">
         <span class="glyphicon glyphicon-comment logo-small"></span>
