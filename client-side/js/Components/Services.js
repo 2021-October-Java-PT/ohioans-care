@@ -14,18 +14,18 @@ export default function Services() {
           <div class="row slideanim">
             <div class="col-sm-4">
               <span class="glyphicon glyphicon-bullhorn logo-small"></span>
-              <h4>LOCAL COMMUNITY UPDATES</h4>
-              <p>Lorem ipsum dolor sit amet..</p>
+              <h4><a href="https://community.ohioanscare.org/public/">LOCAL COMMUNITY UPDATES</a></h4>
+              <p>Get in touch with your local community.</p>
             </div>
             <div class="col-sm-4">
               <span class="glyphicon glyphicon-heart logo-small"></span>
-              <h4>NEIGHBORHOOD CARE WATCH</h4>
-              <p>Lorem ipsum dolor sit amet..</p>
+              <h4><a href="https://community.ohioanscare.org/public/t/neighbor-volunteering">NEIGHBORHOOD CARE WATCH</a></h4>
+              <p>Volunteer to help or receive help from locals in your area.</p>
             </div>
             <div class="col-sm-4">
               <span class="glyphicon glyphicon-book logo-small"></span>
-              <h4>SOCIAL SERVICES DIRECTORY</h4>
-              <p>Lorem ipsum dolor sit amet..</p>
+              <h4><a href="http://localhost:1234/">SOCIAL SERVICES DIRECTORY</a></h4>
+              <p>Explore our directory of social services across Ohio.</p>
             </div>
           </div>
         </div>
