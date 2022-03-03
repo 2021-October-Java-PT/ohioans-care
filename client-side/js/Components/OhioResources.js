@@ -35,6 +35,7 @@ export default function OhioResources(resources) {
                             <li>Thursday: ${resource.thursHours}</li>
                             <li>Friday: ${resource.friHours}</li>
                             <li>Saturday: ${resource.satHours}</li><br>
+                            <li>Phone: <a href="tel:${resource.phone}">${resource.phone}</a><li>
                             <li>Website: <a href="${resource.websiteUrl}" target="_blank">${resource.websiteUrl}</a></li>
                             <li>Language(s): ${resource.languages}</li>
                         </ul>
