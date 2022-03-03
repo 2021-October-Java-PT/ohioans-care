@@ -53,7 +53,8 @@ public class OhioResource {
         this.services = new ArrayList<>(Arrays.asList(services));
     }
 
-    public OhioResource() {}
+    public OhioResource() {
+    }
 
 
     public Long getId() {

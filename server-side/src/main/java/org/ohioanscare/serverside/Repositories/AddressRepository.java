@@ -10,6 +10,8 @@ import java.util.Collection;
 @Repository
 public interface AddressRepository extends CrudRepository<Address, Long> {
     Address findByCityContains(String city);
+
     Collection<Address> findByCountyContains(County county);
+
     Collection<Address> findByCounty_CountyContainsIgnoreCase(String county);
 }
