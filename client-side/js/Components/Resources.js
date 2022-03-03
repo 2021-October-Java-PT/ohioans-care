@@ -1,17 +1,20 @@
+
 export default function Resources(resources) {
     console.log(resources);
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
         <div class="col-sm-4 pg-wrap">
-            <div class="container">
+            <div class="container-fluid">
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="300" height="300"></iframe>
+                <div class="map-cont map-responsive">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="100%" height="350"></iframe>
+                </div>
                 <br>
                 <div class="search-form-cont" >
                 <form>
                 <div class="input-group">
-                  <input type="search" id="search-bar" class="form-control" size="50" placeholder="Enter Your Zip Code, City, or County" required>
+                  <input type="search" id="search-bar" class="form-control" size="80" placeholder="Enter Your Zip Code, City, or County" required>
                   <div class="input-group-btn">
                     <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
                   </div>
@@ -54,7 +57,7 @@ export default function Resources(resources) {
                 </form>
             </div>
         </div>
-        <div class="container-fluid col-sm-8" style="background-color:#f7f8f8;">
+        <div class="container-fluid col-sm-8" style="background-color: white;>
             ${resources.map(resource => {    
             return `
             <div class=" ${resource.services.map(services => { return `${services.service.toLocaleLowerCase()}-service `;}).join("")} panel panel-default">
