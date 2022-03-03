@@ -7,13 +7,13 @@ export default function Services() {
   <div class="serv-main-cont" style="background-image: url(${servImg});">
   <div id="services" class="container-fluid services-pg text-center">
   <div class="serv-oh-vid">
-  <youtube-video
+    <youtube-video
     width="640"
     height="360"
     src="https://youtu.be/ahg_ogEkyhU"
     autoplay
     controls
-/>
+    />
 </div>
 <h2>SERVICES</h2>
 <h4>What We Can Do For You</h4>
