@@ -1,4 +1,4 @@
-import Aaron from "../../assets/Aaron.png";
+import Aaron from "../../assets/Aaron1.png";
 import BGPic from "../../assets/Serv-pg-bg.png";
 import Brady from "../../assets/Brady.png";
 import George from "../../assets/George.png";
