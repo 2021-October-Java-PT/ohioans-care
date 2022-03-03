@@ -4,15 +4,15 @@ export default function OhioResources(resources) {
     
         ${resources.map(resource => {    
         return `
-        <div class="resource-wrapper ${resource.services.map(services => { return `${services.service.toLocaleLowerCase()}-service `;}).join("")}">
-            <div class="resource-box" id="labels">
-                <div class="resource-header">
+        <div class=" ${resource.services.map(services => { return `${services.service.toLocaleLowerCase()}-service `;}).join("")} panel panel-default">
+            <div class="resource-box panel-heading" id="labels">
+                
                     <span id="program-name-header">${resource.entityName}
                         <input type="hidden" id="programmingLanguageId" value="${resource.id}">
                     </span><br>
                     <span id="org-name-header">Provided By: ${resource.organizationName}</span>
-                </div>
-                <div class="resource-grid">
+            <div class="panel-body>    
+                <div class="rsrc">
                     <div class="resource-summary">
                         <ul>
                             <li>${resource.description}</li><br><br>
@@ -26,7 +26,9 @@ export default function OhioResources(resources) {
                             </li>
                         </ul>
                     </div>
-                    <div class="resource-hours-website">
+                    <a href="#demo" class="btn btn-info" data-toggle="collapse">More Info</a>
+  				        <div id="demo" class="collapse">
+                          <div class="resource-hours-website">
                         <ul>
                             <li>Sunday: ${resource.sunHours}</li>
                             <li>Monday: ${resource.monHours}</li>
@@ -35,6 +37,7 @@ export default function OhioResources(resources) {
                             <li>Thursday: ${resource.thursHours}</li>
                             <li>Friday: ${resource.friHours}</li>
                             <li>Saturday: ${resource.satHours}</li><br>
+                            <li>Phone: <a href="tel:${resource.phone}">${resource.phone}</a><li>
                             <li>Website: <a href="${resource.websiteUrl}" target="_blank">${resource.websiteUrl}</a></li>
                             <li>Language(s): ${resource.languages}</li>
                         </ul>
@@ -46,7 +49,9 @@ export default function OhioResources(resources) {
                             <li>${resource.address.region.region} Ohio</li>
                         </ul>
                     </div>
+                          </div>
                 </div>
+            </div>    
             </div>
         </div>
         `;

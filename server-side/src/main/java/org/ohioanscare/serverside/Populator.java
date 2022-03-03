@@ -539,9 +539,9 @@ public class Populator implements CommandLineRunner {
         ohioResourceRepo.save(urbanMissionFoodWarehouseFranklin);
         ohioResourceRepo.save(vineyardFreeHealthClinics);
         ohioResourceRepo.save(westsideFreeStoreMinistries);
-      
-      
-        User user1 = new User("Madison", "Mitchell", "madDawg","TJistheGOAT", "madDawgMitchell@gmail.com", z43952, urbanMissionFoodWarehouseFranklin, schoolBrightPromiseJefferson, freeCollegeBenefitJefferson);
+
+
+        User user1 = new User("Madison", "Mitchell", "madDawg", "TJistheGOAT", "madDawgMitchell@gmail.com", z43952, urbanMissionFoodWarehouseFranklin, schoolBrightPromiseJefferson, freeCollegeBenefitJefferson);
         userRepo.save(user1);
 
         User user2 = new User("Aaron", "Dormer", "hootie4lyfe", "undercoverGoat", "hootiefan75@gmail.com", z43953, primeTimeCenterJefferson, goodwillIJefferson);
