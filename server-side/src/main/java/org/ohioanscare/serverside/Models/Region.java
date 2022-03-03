@@ -24,7 +24,8 @@ public class Region {
         this.region = region;
     }
 
-    public Region() {}
+    public Region() {
+    }
 
 
     public Long getId() {

@@ -6,7 +6,7 @@ export default function UserProfile(userProfile) {
           <span class="glyphicon glyphicon-user logo slideanim"></span>
         </div>
         <div class="col-sm-8">
-          <h2>Welcome ${userProfile.firstName}</h2>
+          <h2>Welcome ${userProfile.firstName} ${userProfile.lastName}</h2>
           <p>Your ZipCode: ${userProfile.zipCode.zipCode}</p><br>
           <h2>Your Saved Resources:</h2>
         </div>

@@ -23,7 +23,8 @@ public class ZipCode {
         this.zipCodePlusFour = zipCodePlusFour;
     }
 
-    public ZipCode() {}
+    public ZipCode() {
+    }
 
 
     public Long getId() {

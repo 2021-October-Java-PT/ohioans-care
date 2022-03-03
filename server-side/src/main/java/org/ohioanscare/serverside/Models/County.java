@@ -23,7 +23,8 @@ public class County {
         this.county = county;
     }
 
-    public County() {}
+    public County() {
+    }
 
 
     public Long getId() {
