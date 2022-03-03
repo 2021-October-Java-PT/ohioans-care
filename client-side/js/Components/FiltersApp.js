@@ -1,6 +1,3 @@
-import Resources from "./Resources.js";
-
-
 export default function Filters() {
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
@@ -9,17 +6,17 @@ export default function Filters() {
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
                 <div class="map-cont">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="100%" height="350"></iframe>
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="100%" height="350"></iframe>
                 </div>
                 <br>
                 
                 <form>
-                <div class="input-group">
-                  <input type="search" id="search-bar" class="form-control" size="80" placeholder="Enter Your Zip Code, City, or County" required>
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
-                  </div>
-                </div>
+                    <div class="input-group">
+                        <input type="search" id="search-bar" class="form-control" size="80" placeholder="Enter Your Zip Code, City, or County" required>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
+                        </div>
+                    </div>
                 </form>
                 
                 <br>
@@ -55,9 +52,9 @@ export default function Filters() {
                     <label class="checkbox-inline">
                         <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="work" name="filter-work-resources">Work
                     </label><br>
-                    </form>
-                    <br>
-                    <button id="filter-btn" class="btn btn-danger">Filter</button>
+                </form>
+                <br>
+                <button id="filter-btn" class="btn btn-danger">Filter</button>
             </div>
         </div>
         

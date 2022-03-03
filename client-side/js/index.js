@@ -56,9 +56,9 @@ function renderHome() {
 
 function navHome() {
   const homeBtn = document.querySelector("#homeBtn");
+
   homeBtn.addEventListener("click", () => {
     app.innerHTML = Home();
-
     Search();
   });
 }
@@ -66,11 +66,11 @@ function navHome() {
 function navServices() {
   const servicesHeaderElem = document.querySelector(".nav-services");
   const servicesFooterElem = document.querySelector(".services-footer-link")
-  
+
   servicesHeaderElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
-  
+
   servicesFooterElem.addEventListener("click", () => {
     app.innerHTML = Services();
   });
@@ -79,19 +79,19 @@ function navServices() {
 function navAbout() {
   const aboutHeaderElem = document.querySelector(".nav-about");
   const aboutFooterElem = document.querySelector(".about-footer-link")
-  
-    aboutHeaderElem.addEventListener("click", () => {
-      app.innerHTML = About();
-    });
-  
-    aboutFooterElem.addEventListener("click", () => {
-      app.innerHTML = About();
-    });  
+
+  aboutHeaderElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
+
+  aboutFooterElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
 }
 
 function navPrivacyPolicy() {
   const aboutElem = document.querySelector(".privacy-policy-footer-link");
-  
+
   aboutElem.addEventListener("click", () => {
     app.innerHTML = PrivacyPolicy();
   });
@@ -106,7 +106,7 @@ function navContact() {
     navResourceForm();
   });
 
-    contactFooterElem.addEventListener("click", () => {
+  contactFooterElem.addEventListener("click", () => {
     app.innerHTML = Contact();
     navResourceForm();
   });
@@ -114,15 +114,15 @@ function navContact() {
 
 function navResourceForm() {
   const resourceBtn = document.querySelector(".btn-danger");
+
   resourceBtn.addEventListener("click", () => {
-    console.log("formBtn");
     app.innerHTML = AddResource();
   });
 }
 
 function navProfileLoginMenu() {
   const profileBtn = document.querySelector("#profileBtn");
-  
+
   profileBtn.addEventListener("click", () => {
     if (isLoggedIn) {
       app.innerHTML = UserProfile(activeUserProfile);
@@ -138,25 +138,18 @@ function userLogin() {
 
   userLoginBtn.addEventListener("click", () => {
     const userNameValue = userName.value;
-    apiHelpers.getRequest(
-      `http://localhost:8080/api/users/${userNameValue}`,
-      (userProfile) => checkIfUserLoggedIn(userProfile)
-    );
-    // console.log("does this hit line 87");
+    apiHelpers.getRequest(`http://localhost:8080/api/users/${userNameValue}`, (userProfile) => {
+      checkIfUserLoggedIn(userProfile)
+    });
   });
 }
 
-// this callback will hit if we get a successful response from
-// the server on log in
 function checkIfUserLoggedIn(userProfile) {
-  // set userLoggedIn = true
   isLoggedIn = true;
   activeUserProfile = userProfile;
-  console.log(isLoggedIn);
-  // close the modal
   var modal = document.getElementById("userId01");
+
   modal.style.display = "none";
-  //render the profile page
   app.innerHTML = UserProfile(userProfile);
 }
 
@@ -168,17 +161,14 @@ function Search() {
   searchSubmitBtn.addEventListener("click", () => {
     const searchString = searchBar.value;
     console.log(searchString);
-    apiHelpers.getRequest(
-      `http://localhost:8080/resources/resource-by-location/${searchString}`,
-      (resources) => {
-        console.log(resources);
-        app.innerHTML = FiltersApp();
-        const resourcesContainer =
-          document.getElementById("resource-container");
-        resourcesContainer.innerHTML = OhioResources(resources);
-        filterResourcesByService(resources, resourcesContainer);
-      }
-    );
+    apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+      console.log(resources);
+      app.innerHTML = FiltersApp();
+      const resourcesContainer = document.getElementById("resource-container");
+      resourcesContainer.innerHTML = OhioResources(resources);
+      filterResourcesByService(resources, resourcesContainer);
+      FilterSearch();
+    });
   });
 
   window.addEventListener(
@@ -192,17 +182,58 @@ function Search() {
         case "Enter":
           const searchString = searchBar.value;
           console.log(searchString);
-          apiHelpers.getRequest(
-            `http://localhost:8080/resources/resource-by-location/${searchString}`,
-            (resources) => {
-              console.log(resources);
-              app.innerHTML = FiltersApp();
-              const resourcesContainer =
-                document.getElementById("resource-container");
-              resourcesContainer.innerHTML = OhioResources(resources);
-              filterResourcesByService(resources, resourcesContainer);
-            }
-          );
+          apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+            console.log(resources);
+            app.innerHTML = FiltersApp();
+            const resourcesContainer = document.getElementById("resource-container");
+            resourcesContainer.innerHTML = OhioResources(resources);
+            filterResourcesByService(resources, resourcesContainer);
+            FilterSearch();
+          });
+          break;
+
+        default:
+          return;
+      }
+
+      event.preventDefault();
+    },
+    true
+  );
+}
+
+function FilterSearch() {
+  const searchBar = document.getElementById("search-bar");
+  const searchSubmitBtn = document.getElementById("search-submit-btn");
+
+  searchSubmitBtn.addEventListener("click", () => {
+    const searchString = searchBar.value;
+    console.log(searchString);
+    apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+      console.log(resources);
+      const resourcesContainer = document.getElementById("resource-container");
+      resourcesContainer.innerHTML = OhioResources(resources);
+      filterResourcesByService(resources, resourcesContainer);
+    });
+  });
+
+  window.addEventListener(
+    "keydown",
+    function (event) {
+      if (event.defaultPrevented) {
+        return;
+      }
+
+      switch (event.key) {
+        case "Enter":
+          const searchString = searchBar.value;
+          console.log(searchString);
+          apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+            console.log(resources);
+            const resourcesContainer = document.getElementById("resource-container");
+            resourcesContainer.innerHTML = OhioResources(resources);
+            filterResourcesByService(resources, resourcesContainer);
+          });
           break;
 
         default:
@@ -218,16 +249,13 @@ function Search() {
 function renderNorthwest() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-nw")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/regions/northwest",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/regions/northwest", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -235,16 +263,13 @@ function renderNorthwest() {
 function renderNortheast() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-ne")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/regions/northeast",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/regions/northeast", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -252,16 +277,13 @@ function renderNortheast() {
 function renderCentral() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-c")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/regions/central",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/regions/central", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -269,16 +291,13 @@ function renderCentral() {
 function renderSouthwest() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-sw")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/regions/southwest",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/regions/southwest", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -286,16 +305,13 @@ function renderSouthwest() {
 function renderSoutheast() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-se")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/regions/southeast",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/regions/southeast", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -303,16 +319,13 @@ function renderSoutheast() {
 function renderFood() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("food-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/food",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/food", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -320,16 +333,13 @@ function renderFood() {
 function renderHousing() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("housing-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/housing",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/housing", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -337,16 +347,13 @@ function renderHousing() {
 function renderGoods() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("goods-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/goods",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/goods", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -354,16 +361,13 @@ function renderGoods() {
 function renderTransit() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("transit-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/transit",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/transit", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -371,16 +375,13 @@ function renderTransit() {
 function renderHealth() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("health-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/health",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/health", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -388,16 +389,13 @@ function renderHealth() {
 function renderMoney() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("money-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/money",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/money", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -405,16 +403,13 @@ function renderMoney() {
 function renderCare() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("care-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/care",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/care", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -422,16 +417,13 @@ function renderCare() {
 function renderEducation() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("education-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/education",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/education", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -439,16 +431,13 @@ function renderEducation() {
 function renderWork() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("work-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/work",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/work", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
@@ -456,16 +445,13 @@ function renderWork() {
 function renderLegal() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("legal-resources")) {
-      apiHelpers.getRequest(
-        "http://localhost:8080/resources/services/legal",
-        (resources) => {
-          app.innerHTML = FiltersApp();
-          const resourcesContainer =
-            document.getElementById("resource-container");
-          resourcesContainer.innerHTML = OhioResources(resources);
-          filterResourcesByService(resources, resourcesContainer);
-        }
-      );
+      apiHelpers.getRequest("http://localhost:8080/resources/services/legal", (resources) => {
+        app.innerHTML = FiltersApp();
+        const resourcesContainer = document.getElementById("resource-container");
+        resourcesContainer.innerHTML = OhioResources(resources);
+        filterResourcesByService(resources, resourcesContainer);
+        FilterSearch();
+      });
     }
   });
 }
