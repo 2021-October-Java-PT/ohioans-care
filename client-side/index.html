@@ -42,26 +42,23 @@
             <button id="profileBtn" class="btn glyphicon glyphicon-user signIn" style="width:auto;">
             </button>
           </li>
-          <!-- <li><button onclick="document.getElementById('userId01').style.display='block'"
-            class="btn glyphicon glyphicon-user signIn" style="width:auto;"></button></li> -->
           <div class="modal-wrapper col-sm-12" style="text-align: center;">
             <div id="userId01" class="modal modal-cont col-sm-6">
 
-              <!-- <form class="modal-content animate" action="/action_page.php" method="post"> -->
               <form class="modal-content animate" method="post" style="background-color: #fff;"></form>
               <div class="profilecontainer">
                 <span onclick="document.getElementById('userId01').style.display='none'" class="close"
                   title="Close Modal">&times;</span>
                 <img src="assets\profile.png" alt="Avatar" class="avatar" width="150" height="150">
               </div>
-  
+
               <div class="form-container">
                 <label for="uname"><b>Username</b></label>
                 <input id="userName" type="text" placeholder="Enter Username" name="uname" required>
-  
+
                 <label for="pwd"><b>Password</b></label>
                 <input id="userPassword" type="password" placeholder="Enter Password" name="pwd" required>
-  
+
                 <button id="loginBtn">Login</button>
                 <label>
                   <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -70,7 +67,7 @@
               <div class="col-sm-6" style="background-color: #cfcfc4;">
                 <button type="button" onclick="document.getElementById('userId01').style.display='none'"
                   class="cancelbtn">Cancel</button>
-                <span class="pwd">Forgot <a href="#">password?</a></span>
+                <!-- <span class="pwd">Forgot <a href="#">password?</a></span> -->
               </div>
               </form>
             </div>

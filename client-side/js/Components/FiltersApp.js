@@ -6,7 +6,7 @@ export default function Filters() {
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
                 <div class="map-cont">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="100%" height="350"></iframe>
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="100%" height="350"></iframe>
                 </div>
                 <br>
                 
@@ -52,9 +52,9 @@ export default function Filters() {
                     <label class="checkbox-inline">
                         <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="work" name="filter-work-resources">Work
                     </label><br>
-                    </form>
-                    <br>
-                    <button id="filter-btn" class="btn btn-danger">Filter</button>
+                </form>
+                <br>
+                <button id="filter-btn" class="btn btn-danger">Filter</button>
             </div>
         </div>
         
