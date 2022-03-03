@@ -25,10 +25,9 @@ public class User {
 
 
     public User() {
-
     }
 
-    public User(String firstName, String lastName, String userName, String password, String email, ZipCode zipCode, OhioResource ...resources){
+    public User(String firstName, String lastName, String userName, String password, String email, ZipCode zipCode, OhioResource... resources) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;

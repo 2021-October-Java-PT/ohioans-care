@@ -29,10 +29,7 @@ public class AddressRestController {
 
     @GetMapping("/addresses/county/{countyName}")
     public Collection<Address> getAddressByCounty(@PathVariable(value = "countyName") String countyName) {
-//        County county = countyRepo.findByCountyContainsIgnoreCase(countyName);
-//        return addressRepo.findByCountyContains(county);
-//
         return addressRepo.findByCounty_CountyContainsIgnoreCase(countyName);
-   }
+    }
 
 }
