@@ -42,18 +42,14 @@ export default function About() {
                                             <div class="share-icons">
                                                 <div class="border"></div>
                                                 <ul class="team-social icons-1">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                </ul>
+                                                <li><a href="https://www.linkedin.com/in/madison-r-mitchell" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="https://github.com/madison-mitchell" target="_blank" class="social-icon"><i class="fa fa-github"></i></a></li>
+                                            </ul>
 
-                                                <ul class="team-social icons-2">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                </ul>
+                                            <ul class="team-social icons-2">
+                                                <li><a href="http://madison-mitchell.github.io" target="_blank" class="social-icon"><i class="fa fa-user"></i></a></li>
+                                                <li><a href="mailto:madisonrmitchell@icloud.com" class="social-icon"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
                                             </div>
                                             <div class="team-details">
                                                 <h4 class="team-name">
@@ -81,18 +77,14 @@ export default function About() {
                                             <div class="share-icons">
                                                 <div class="border"></div>
                                                 <ul class="team-social icons-1">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                </ul>
+                                                <li><a href="https://www.linkedin.com/in/jpwilson2021/" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="https://github.com/JPWilson2021" target="_blank" class="social-icon"><i class="fa fa-github"></i></a></li>
+                                            </ul>
 
-                                                <ul class="team-social icons-2">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                </ul>
+                                            <ul class="team-social icons-2">
+                                                <li><a href="http://JPWilson2021.github.io" target="_blank" class="social-icon"><i class="fa fa-user"></i></a></li>
+                                                <li><a href="mailto:wilsonjp805@gmail. class="social-icon"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
                                             </div>
                                             <div class="team-details">
                                                 <h4 class="team-name">
@@ -120,18 +112,14 @@ export default function About() {
                                             <div class="share-icons">
                                                 <div class="border"></div>
                                                 <ul class="team-social icons-1">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                </ul>
+                                                <li><a href="https://www.linkedin.com/in/timothy-willis-a5a903a3/" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="https://github.com/twillis90" target="_blank" class="social-icon"><i class="fa fa-github"></i></a></li>
+                                            </ul>
 
-                                                <ul class="team-social icons-2">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                </ul>
+                                            <ul class="team-social icons-2">
+                                                <li><a href="https://thewillisworld.com" target="_blank" class="social-icon"><i class="fa fa-user"></i></a></li>
+                                                <li><a href="mailto:t.willis9290@gmail. class="social-icon"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
                                             </div>
                                             <div class="team-details">
                                                 <h4 class="team-name">
@@ -159,18 +147,14 @@ export default function About() {
                                             <div class="share-icons">
                                                 <div class="border"></div>
                                                 <ul class="team-social icons-1">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                </ul>
+                                                <li><a href="https://www.linkedin.com/in/aaron-dormer-140726115/" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="https://github.com/chessclubajd" target="_blank" class="social-icon"><i class="fa fa-github"></i></a></li>
+                                            </ul>
 
-                                                <ul class="team-social icons-2">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                </ul>
+                                            <ul class="team-social icons-2">
+                                                <li><a href="http://chessclubajd.github.io" target="_blank" class="social-icon"><i class="fa fa-user"></i></a></li>
+                                                <li><a href="mailto:chessclubajd@yahoo. class="social-icon"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
                                             </div>
                                             <div class="team-details">
                                                 <h4 class="team-name">
@@ -198,18 +182,14 @@ export default function About() {
                                             <div class="share-icons">
                                                 <div class="border"></div>
                                                 <ul class="team-social icons-1">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                </ul>
+                                                <li><a class="social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a class="social-icon"><i class="fa fa-github"></i></a></li>
+                                            </ul>
 
-                                                <ul class="team-social icons-2">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                </ul>
+                                            <ul class="team-social icons-2">
+                                                <li><a class="social-icon"><i class="fa fa-user"></i></a></li>
+                                                <li><a class="social-icon"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
                                             </div>
                                             <div class="team-details">
                                                 <h4 class="team-name">
@@ -237,18 +217,14 @@ export default function About() {
                                             <div class="share-icons">
                                                 <div class="border"></div>
                                                 <ul class="team-social icons-1">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                </ul>
+                                                <li><a class="social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a class="social-icon"><i class="fa fa-github"></i></a></li>
+                                            </ul>
 
-                                                <ul class="team-social icons-2">
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
-                                                    </li>
-                                                    <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                </ul>
+                                            <ul class="team-social icons-2">
+                                                <li><a class="social-icon"><i class="fa fa-user"></i></a></li>
+                                                <li><a class="social-icon"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
                                             </div>
                                             <div class="team-details">
                                                 <h4 class="team-name">
