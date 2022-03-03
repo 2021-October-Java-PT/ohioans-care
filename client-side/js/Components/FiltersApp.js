@@ -1,5 +1,3 @@
-import Resources from "./Resources.js";
-
 export default function Filters() {
     return `
     <div class="row pg-cont" style="background-color: #d0cfce;">
@@ -7,18 +5,20 @@ export default function Filters() {
             <div class="container-fluid">
                 <h2>Filter Results By:</h2>
                 <p>LOCATION:</p>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="470" height="350"></iframe>
+                <div class="map-cont">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1LQJ-CngUrh5CpnqcsXtQep8G_U4EdjWy&ehbc=2E312F" width="100%" height="350"></iframe>
+                </div>
                 <br>
-                <div class="form-cont">
+                
                 <form>
-                <div class="input-group">
-                  <input type="search" id="search-bar" class="form-control" size="20" placeholder="Enter Your Zip Code, City, or County" required>
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
-                  </div>
-                </div>
+                    <div class="input-group">
+                        <input type="search" id="search-bar" class="form-control" size="80" placeholder="Enter Your Zip Code, City, or County" required>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-danger" id="search-submit-btn">Submit</button>
+                        </div>
+                    </div>
                 </form>
-                </div>
+                
                 <br>
                 <p>RESOURCE:</p>
                 <form>
@@ -52,12 +52,13 @@ export default function Filters() {
                     <label class="checkbox-inline">
                         <input type="checkbox" id="filter-work-resources" class="filter-work-resources" value="work" name="filter-work-resources">Work
                     </label><br>
-                    </form>
-                    <button id="filter-btn">Filter</button>
+                </form>
+                <br>
+                <button id="filter-btn" class="btn btn-danger">Filter</button>
             </div>
         </div>
         
-        <div class="col-sm-8" style="background-color:#f7f8f8;">
+        <div class="col-sm-8" style="background-color: white;">
             <div class="resource-container" id="resource-container">
             </div>
         </div>
