@@ -25,8 +25,7 @@ export default function OhioResources(resources) {
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#demo" class="btn btn-info" data-toggle="collapse">More Info</a>
-                                <div id="demo" class="collapse">
+                            
                                     <div class="resource-hours-website">
                                         <ul>
                                             <li>Sunday: ${resource.sunHours}</li>
@@ -48,7 +47,7 @@ export default function OhioResources(resources) {
                                             <li>${resource.address.region.region} Ohio</li>
                                         </ul>
                                     </div>
-                                </div>
+                               
                             </div>
                         </div>    
                     </div>
