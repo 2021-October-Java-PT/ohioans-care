@@ -240,6 +240,10 @@ ul {
   grid-area: "resource-hours-website";
   word-break: break-all;
 }
+.resource-hours-website li a {
+  text-decoration: none;
+  color: #FFF !important;
+}
 
 .resource-address {
   grid-area: "resource-address";
@@ -884,4 +888,13 @@ ul {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.row2 {
+  display: flex;
+}
+
+.column2 {
+  flex: 33%;
+  padding-left: 5%;
 }
