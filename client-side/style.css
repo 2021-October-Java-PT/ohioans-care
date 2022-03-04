@@ -889,3 +889,12 @@ ul {
   width: 100%;
   position: absolute;
 }
+
+.row2 {
+  display: flex;
+}
+
+.column2 {
+  flex: 33%;
+  padding-left: 5%;
+}
