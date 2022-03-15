@@ -1,14 +1,14 @@
-import careImg from "../../assets/CARE.png";
-import educationImg from "../../assets/EDUCATION.png";
-import foodImg from "../../assets/Food.png";
-import goodsImg from "../../assets/Goods.png";
-import healthImg from "../../assets/HEALTH.png";
-import housingImg from "../../assets/HOUSING.png";
-import jumbotronImg from "../../assets/Jumbotron-bg.png";
-import legalImg from "../../assets/LEGAL.png";
-import moneyImg from "../../assets/MONEY.png";
-import transitImg from "../../assets/TRANSIT.png";
-import workImg from "../../assets/WORK.png";
+const careImg = "/assets/CARE.png";
+import educationImg from "/assets/EDUCATION.png";
+import foodImg from "/assets/Food.png";
+import goodsImg from "/assets/Goods.png";
+import healthImg from "/assets/HEALTH.png";
+import housingImg from "/assets/HOUSING.png";
+import jumbotronImg from "/assets/Jumbotron-bg.png";
+import legalImg from "/assets/LEGAL.png";
+import moneyImg from "/assets/MONEY.png";
+import transitImg from "/assets/TRANSIT.png";
+import workImg from "/assets/WORK.png";
 
 export default function Home() {
   return `

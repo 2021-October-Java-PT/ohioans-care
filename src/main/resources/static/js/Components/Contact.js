@@ -1,5 +1,5 @@
-import BgPic from "../../assets/Serv-pg-bg.png";
-import callPic from "../../assets/contact-img.png";
+import BgPic from "/assets/Serv-pg-bg.png";
+import callPic from "/assets/contact-img.png";
 
 export default function Services() {
   return `

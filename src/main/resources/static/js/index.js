@@ -4,7 +4,7 @@ import Contact from "./components/Contact.js";
 import FiltersApp from "./components/FiltersApp.js";
 import Home from "./components/Home.js";
 import OhioResources from "./components/OhioResources.js";
-import PrivacyPolicy from "./components/PrivacyPolicy";
+import PrivacyPolicy from "./Components/PrivacyPolicy.js";
 import Services from "./components/Services.js";
 import UserProfile from "./Components/Profile.js";
 import apiHelpers from "./api-helpers/apiHelpers.js";

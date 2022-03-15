@@ -1,10 +1,10 @@
-import Aaron from "../../assets/Aaron1.png";
-import BGPic from "../../assets/Serv-pg-bg.png";
-import Brady from "../../assets/Brady.png";
-import George from "../../assets/George.png";
-import Jo from "../../assets/Jo.png";
-import Madison from "../../assets/Madison.png";
-import TJ from "../../assets/TJ.png";
+import Aaron from "/assets/Aaron1.png";
+import BGPic from "/assets/Serv-pg-bg.png";
+import Brady from "/assets/Brady.png";
+import George from "/assets/George.png";
+import Jo from "/assets/Jo.png";
+import Madison from "/assets/Madison.png";
+import TJ from "/assets/TJ.png";
 
 export default function About() {
   return `
