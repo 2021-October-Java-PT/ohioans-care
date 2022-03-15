@@ -27,7 +27,7 @@ h4 {
   color: #fff;
   padding: 100px 25px;
   font-family: Montserrat, sans-serif;
-  background-image: url(assets\Jumbotron-bg.png);
+  background-image: url("assets/Jumbotron-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -639,11 +639,11 @@ span.pwd {
 }
 
 .rs-team#rs-team3.bg4:after {
-  background-image: url(assets\Serv-pg-bg.png);
+  background-image: url("assets/Serv-pg-bg.png");
 }
 
 .rs-team#rs-team3.bg6:after {
-  background-image: url(assets\Serv-pg-bg.png);
+  background-image: url("assets/Serv-pg-bg.png");
 }
 
 .rs-team#rs-team3 .container-fullwidth {
@@ -723,7 +723,7 @@ ul {
 
 /* add resource page */
 .add-rsrc-cont {
-  background-image: url('assets\suggest-bg.png');
+  background-image: url('assets/suggest-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: -20px;
@@ -750,7 +750,7 @@ ul {
   border-radius: 8px;
   overflow: hidden;
   padding-bottom: 65%;
-  background-image: url('assets\suggestion.png');
+  background-image: url('assets/suggestion.png');
   background-repeat: no-repeat;
   background-size: 150%;
   background-position: 0 5%;

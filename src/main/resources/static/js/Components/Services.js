@@ -1,6 +1,6 @@
-import 'youtube-video-js';
+// import 'youtube-video-js';
 
-import servImg from "/assets/Serv-pg-bg.png";
+const servImg = "/assets/Serv-pg-bg.png";
 
 export default function Services() {
   return `
