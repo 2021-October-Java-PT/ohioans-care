@@ -138,7 +138,7 @@ function userLogin() {
 
   userLoginBtn.addEventListener("click", () => {
     const userNameValue = userName.value;
-    apiHelpers.getRequest(`http://localhost:8080/api/users/${userNameValue}`, (userProfile) => {
+    apiHelpers.getRequest(`http://ohioanscare-demo.herokuapp.com/api/users/${userNameValue}`, (userProfile) => {
       checkIfUserLoggedIn(userProfile)
     });
   });
@@ -161,7 +161,7 @@ function Search() {
   searchSubmitBtn.addEventListener("click", () => {
     const searchString = searchBar.value;
     console.log(searchString);
-    apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+    apiHelpers.getRequest(`http://ohioanscare-demo.herokuapp.com/resources/resource-by-location/${searchString}`, (resources) => {
       console.log(resources);
       app.innerHTML = FiltersApp();
       const resourcesContainer = document.getElementById("resource-container");
@@ -182,7 +182,7 @@ function Search() {
         case "Enter":
           const searchString = searchBar.value;
           console.log(searchString);
-          apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+          apiHelpers.getRequest(`http://ohioanscare-demo.herokuapp.com/resources/resource-by-location/${searchString}`, (resources) => {
             console.log(resources);
             app.innerHTML = FiltersApp();
             const resourcesContainer = document.getElementById("resource-container");
@@ -209,7 +209,7 @@ function FilterSearch() {
   searchSubmitBtn.addEventListener("click", () => {
     const searchString = searchBar.value;
     console.log(searchString);
-    apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+    apiHelpers.getRequest(`http://ohioanscare-demo.herokuapp.com/resources/resource-by-location/${searchString}`, (resources) => {
       console.log(resources);
       const resourcesContainer = document.getElementById("resource-container");
       resourcesContainer.innerHTML = OhioResources(resources);
@@ -228,7 +228,7 @@ function FilterSearch() {
         case "Enter":
           const searchString = searchBar.value;
           console.log(searchString);
-          apiHelpers.getRequest(`http://localhost:8080/resources/resource-by-location/${searchString}`, (resources) => {
+          apiHelpers.getRequest(`http://ohioanscare-demo.herokuapp.com/resources/resource-by-location/${searchString}`, (resources) => {
             console.log(resources);
             const resourcesContainer = document.getElementById("resource-container");
             resourcesContainer.innerHTML = OhioResources(resources);
@@ -249,7 +249,7 @@ function FilterSearch() {
 function renderNorthwest() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-nw")) {
-      apiHelpers.getRequest("http://localhost:8080/resources/regions/northwest", (resources) => {
+      apiHelpers.getRequest("http://ohioanscare-demo.herokuapp.com/resources/regions/northwest", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -263,7 +263,7 @@ function renderNorthwest() {
 function renderNortheast() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-ne")) {
-      apiHelpers.getRequest("http://localhost:8080/resources/regions/northeast", (resources) => {
+      apiHelpers.getRequest("http://ohioanscare-demo.herokuapp.com/resources/regions/northeast", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -277,7 +277,7 @@ function renderNortheast() {
 function renderCentral() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-c")) {
-      apiHelpers.getRequest("http://localhost:8080/resources/regions/central", (resources) => {
+      apiHelpers.getRequest("http://ohioanscare-demo.herokuapp.com/resources/regions/central", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -291,7 +291,7 @@ function renderCentral() {
 function renderSouthwest() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-sw")) {
-      apiHelpers.getRequest("http://localhost:8080/resources/regions/southwest", (resources) => {
+      apiHelpers.getRequest("http://ohioanscare-demo.herokuapp.com/resources/regions/southwest", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -305,7 +305,7 @@ function renderSouthwest() {
 function renderSoutheast() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("region-se")) {
-      apiHelpers.getRequest("http://localhost:8080/resources/regions/southeast", (resources) => {
+      apiHelpers.getRequest("http://ohioanscare-demo.herokuapp.com/resources/regions/southeast", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
