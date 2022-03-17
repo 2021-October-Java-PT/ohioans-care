@@ -319,7 +319,7 @@ function renderSoutheast() {
 function renderFood() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("food-resources")) {
-      apiHelpers.getRequest("http://localhost:8080/resources/services/food", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/food", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
