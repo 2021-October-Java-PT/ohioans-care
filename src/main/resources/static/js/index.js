@@ -333,7 +333,7 @@ function renderFood() {
 function renderHousing() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("housing-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/housing", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/housing", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -347,7 +347,7 @@ function renderHousing() {
 function renderGoods() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("goods-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/goods", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/goods", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -361,7 +361,7 @@ function renderGoods() {
 function renderTransit() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("transit-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/transit", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/transit", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -375,7 +375,7 @@ function renderTransit() {
 function renderHealth() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("health-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/health", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/health", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -389,7 +389,7 @@ function renderHealth() {
 function renderMoney() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("money-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/money", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/money", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -403,7 +403,7 @@ function renderMoney() {
 function renderCare() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("care-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/care", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/care", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -417,7 +417,7 @@ function renderCare() {
 function renderEducation() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("education-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/education", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/education", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -431,7 +431,7 @@ function renderEducation() {
 function renderWork() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("work-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/work", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/work", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
@@ -445,7 +445,7 @@ function renderWork() {
 function renderLegal() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("legal-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/legal", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/legal", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
