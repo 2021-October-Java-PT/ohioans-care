@@ -333,7 +333,7 @@ function renderFood() {
 function renderHousing() {
   app.addEventListener("click", (event) => {
     if (event.target.classList.contains("housing-resources")) {
-      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/services/housing", (resources) => {
+      apiHelpers.getRequest("https://ohioanscare-demo.herokuapp.com/resources/services/housing", (resources) => {
         app.innerHTML = FiltersApp();
         const resourcesContainer = document.getElementById("resource-container");
         resourcesContainer.innerHTML = OhioResources(resources);
