@@ -1,4 +1,4 @@
-import 'youtube-video-js';
+// import 'youtube-video-js';
 
 const servImg = "/assets/Serv-pg-bg.png";
 
